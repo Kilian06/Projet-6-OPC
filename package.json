@@ -1,0 +1,19 @@
+{
+  "name": "projet-6-opc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kilian06/Projet-6-OPC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kilian06/Projet-6-OPC/issues"
+  },
+  "homepage": "https://github.com/Kilian06/Projet-6-OPC#readme"
+}
