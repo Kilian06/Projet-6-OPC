@@ -1,3 +1,142 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 80px;
+}
 
+.filterselect {
+  color: white;
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+  border: none;
+  font-size: large;
+  padding-left: 20px;
+}
+
+.bleu {
+  background-color: #3282F7;
+}
+
+.vert {
+  background-color: #68D9A4;
+}
+
+.orange {
+  background-color: #ED6454;
+}
+
+.result {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#affichagerecette {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.resultatrecherche {
+  color: black;
+  width: 30%;
+  background-color: #C7BEBE;
+  border-radius: 5px;
+  border: none;
+  margin-top: 40px;
+}
+
+.resultatrecherche img {
+  height: 178px;
+}
+
+.divzonerecette {
+  background-color: #E7E7E7;
+  border-radius: 0 0 5px 5px;
+}
+
+.zonetitretimer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.zoneingdes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.zoneingdes span {
+  font-weight: bold;
+}
+
+.descriptionrecette {
+  font-size: 14px;
+  width: 45%;
+  height: 109px;
+  overflow: hidden;
+}
+
+:root {
+  --purple: #e41b6f;
+  --off-white: #f8f8f8;
+  --off-black: #444444;
+  --shadow: 0 0 30px #cccccc;
+  --xs: 0.2rem;
+  --sm: 0.5rem;
+  --md: 0.8rem;
+  --lg: 1rem;
+  --xlg: 1.5rem;
+  --xxlg: 2rem;
+  --transition: 0.3s linear all;
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border-radius: 40px;
+  color: white;
+  font-size: 16px;
+  margin-right: 20px;
+  padding: 10px 20px;
+}
+
+.remove-tag {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+.recherche input {
+  width: 100%;
+  height: 70px;
+  border-radius: 5px;
+  background-color: rgb(217, 217, 217);
+  border: none;
+  font-size: xx-large;
+}
+
+.keyword {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 20px;
+  position: absolute;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,54 @@
+@import "../utils/variables";
+.result{
+    width: 100%;
+    margin-top: 40px;
+}
+
+#affichagerecette{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.resultatrecherche{
+    color : black;
+    width: 30%;
+    background-color: $colormarron;
+    border-radius: 5px;
+    border: none;
+    margin-top: 40px;
+}
+
+.resultatrecherche img{
+    height: 178px;
+}
+.divzonerecette{
+    background-color: $colorgris;
+    border-radius: 0 0 5px 5px;
+}
+
+.zonetitretimer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.zoneingdes{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.zoneingdes span{
+    font-weight: bold;
+}
+
+.descriptionrecette{
+    font-size: 14px;
+    width: 45%;
+    height: 109px;
+    overflow: hidden;
+}
+

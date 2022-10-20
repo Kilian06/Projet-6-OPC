@@ -12,13 +12,14 @@
 </head>
 <body>
     <header>
-        <img src="https://user.oc-static.com/upload/2020/08/14/15973932905401_logo%20%281%29.png">
+        <img class="logo"src="https://user.oc-static.com/upload/2020/08/14/15973932905401_logo%20%281%29.png">
     </header>
     <main>
         <div class="recherche">
             
                 <div>
-                  <input id="myInput" type="text" name="search" placeholder="quoi utiliser ?">
+                  <input id="myInput" type="text" name="search" placeholder="Rechercher une recette
+                  " value="coco">
                 </div>
                 <div class="tagplace">
 
@@ -26,21 +27,26 @@
 
         </div>
         <div class="keyword">
+            <div class="tag-container-ing"></div>
+            <div class="tag-container-app"></div>
+            <div class="tag-container-ust"></div>
+
+
         </div>
         <div class="filter">
             <div class="Ingredient">
-                <select id="selecting">
-                    
+                <select id="selecting" class="filterselect bleu">
+                    <option value="" disabled selected>Ingredients</option>
                 </select>
             </div>
             <div class="appareils">
-                <select id="selectapp">
-                    
+                <select id="selectapp" class="filterselect vert">
+                    <option value="" disabled selected>Appareils</option>
                 </select>
             </div>
             <div class="Ustensiles">
-                <select id="selectust">
-                    
+                <select id="selectust"class="filterselect orange">
+                    <option value="" disabled selected>Ustensiles</option>
                 </select>
             </div>
         </div>
@@ -54,4 +60,11 @@
 <script src="./script/utils/select.js" type="module"></script>
 <script src="./script/pages/index.js" type="module"></script>
 <script src="./script/factories/printrecette.js"></script>
+<script src="./script/utils/taging.js" type="module"></script>
+<script src="./script/utils/tagapp.js" type="module"></script>
+<script src="./script/utils/tagust.js" type="module"></script>
+
+
+
+
 </html>

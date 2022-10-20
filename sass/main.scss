@@ -1,2 +1,35 @@
 @import "../sass/utils/variables.scss";
-@import "../sass/composants/autocomplete.scss"
+@import "../sass/composants/autocomplete.scss";
+@import "../sass/composants/select.scss";
+@import "../sass/composants/resultatrecherche.scss";
+@import "../sass/composants/tag.scss";
+
+
+
+
+
+header{
+text-align:center;
+}
+
+main{
+ width: 90%;
+ margin: auto;
+}
+
+.recherche input{
+    width: 100%;
+    height: 70px;
+    border-radius:5px;
+    background-color: rgb(217, 217, 217);
+    border: none;
+    font-size: xx-large;
+}
+
+.keyword{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    position: absolute;
+}
