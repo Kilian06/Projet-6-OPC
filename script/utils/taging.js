@@ -1,7 +1,7 @@
-document.getElementById("selecting").addEventListener("change",function(){
-    console.log(this.value)
+// document.getElementById("selecting").addEventListener("change",function(){
+//     console.log(this.value)
 
-})
+// })
 
 const button = document.querySelector('#add-button');
 const tagInput = document.getElementById("selecting");
@@ -22,9 +22,8 @@ const createTag = (tagValue) => {
     tag.setAttribute('class', 'tag bleu');
     tag.appendChild(tagContent);
 
-    const close = document.createElement('span');
+    const close = document.createElement('img');
     close.setAttribute('class', 'remove-tag');
-    close.innerHTML = '&#10006;';
     close.onclick = handleRemoveTag;
 
     tag.appendChild(close);
