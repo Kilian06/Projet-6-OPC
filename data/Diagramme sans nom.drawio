@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-25T07:09:26.212Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="C8Ah78wcfhlSvz0mfXl7" version="20.4.1" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-10-25T10:29:23.800Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="SX79YznUXxG9j-3jrA5a" version="20.4.1" type="github" pages="4">
   <diagram id="PDAW26BpAuXdMzm60RzW" name="Diagramme Gnl">
     <mxGraphModel dx="946" dy="576" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -115,6 +115,42 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="JqWxYCyJTqQM3ldopRE8-2" value="Input &amp;amp; Tag" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1F8IHwg4wcNeJ0Z6-Kh-1" value="include Recette Description" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="174" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1F8IHwg4wcNeJ0Z6-Kh-2" value="include Recette Titre" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1F8IHwg4wcNeJ0Z6-Kh-3" value="include Recette Ingredient" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="534" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1F8IHwg4wcNeJ0Z6-Kh-4" value="Ou" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="294" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="P1F8IHwg4wcNeJ0Z6-Kh-5" value="Ou" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="474" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gOnZAgf_PMcHgm8qhD7Q-1" value="Tag Ingredient" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="204" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOnZAgf_PMcHgm8qhD7Q-2" value="Tag Appareil" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOnZAgf_PMcHgm8qhD7Q-3" value="Tag Ustensil" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="504" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gOnZAgf_PMcHgm8qhD7Q-4" value="&amp;amp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="314" y="315" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gOnZAgf_PMcHgm8qhD7Q-5" value="&amp;amp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="454" y="315" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gOnZAgf_PMcHgm8qhD7Q-6" value="&amp;amp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="260" width="60" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
