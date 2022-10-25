@@ -1,1 +1,95 @@
-<mxfile host="app.diagrams.net" modified="2022-10-18T13:33:17.101Z" agent="5.0 (iPad; CPU OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/106.0.5249.92 Mobile/15E148 Safari/604.1" version="20.4.1" etag="bg4NZKvFECqCEmr6nG1c" type="github"><diagram id="PDAW26BpAuXdMzm60RzW">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-10-25T07:06:39.640Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="uaNy8SJcYCntGFfJxfai" version="20.4.1" type="github" pages="3">
+  <diagram id="PDAW26BpAuXdMzm60RzW" name="Diagramme Gnl">
+    <mxGraphModel dx="946" dy="576" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-1" value="Init page" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-2" value="Input &amp;lt; 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-3" value="Input &amp;gt; 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-4" value="No tag" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-5" value="Tag" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-6" value="No tag" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-7" value="Tag" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-9" value="All recette" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-10" value="Recette Tag" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-11" value="Recette input" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-12" value="Recette input" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-13" value="Recette Tag" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="430" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UXHRPPGq8t67sTUm5EIk-14" value="&amp;amp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="400" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="cX4d8SBomeYubeaBq3bX" name="Recette Tag">
+    <mxGraphModel dx="946" dy="576" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uUEdR9foPm8XghotxYkY-1" value="Tag ?&lt;br&gt;Oui" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-2" value="Tag Ingredient" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-3" value="Tag Appareil" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-4" value="Tag Ustensil" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-5" value="Recette Ingredient" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-6" value="Recette Appareil" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-7" value="Recette Ustensil" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-8" value="&amp;amp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="145" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-9" value="&amp;amp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="145" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uUEdR9foPm8XghotxYkY-10" value="each" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="BypCoPceQmpcYR5Jc-zJ" name="Recette Input">
+    <mxGraphModel dx="946" dy="576" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
