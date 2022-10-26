@@ -16,29 +16,30 @@ let myingredient
 
 
 async function displayrecette(recette) {
-    // RAZ de l'affichage des recettes
+// RAZ de l'affichage des recettes
     let recettetab = []
 
-    // var myingredient = null;
+// var myingredient = null;
 
-    // Const pour position affichage recette dans HTML
+// Const pour position affichage recette dans HTML
     const listerecettediv = document.getElementById("affichagerecette");
 
-    // Récupération de la valeur d'input dans le champ HTML
+// Récupération de la valeur d'input dans le champ HTML
     var inputtext = document.getElementById("myInput").value
 
-    // Déclaration Variable
+// Déclaration Variable
     let listerecette
 
-    // Si il n'y a pas de tag je cherche dans l'input sinon je cherche dans Tag + Input
+// Si il n'y a pas de tag je cherche dans l'input sinon je cherche dans Tag + Input
     if(selecting.length === 0 & selectust.length === 0 & selectapp.length === 0){
 
-    // Si longeur input >2 alors je cherche dedans sinon j'affiche tout
+// Si longeur input >2 alors je cherche dedans sinon j'affiche tout
     if((document.getElementById("myInput").value).length > 2){
+        console.log("Recherche Input uniquement")
 
-    // Je cherche dans chaque recette
+// Je cherche dans chaque recette
     recette.forEach((recette) => {
-        //String object Ingredient pour includes
+//String object Ingredient pour includes
         window.ing = 0
             recette.ingredients.forEach((liste) => {
             if (liste.ingredient.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ""))){
@@ -46,7 +47,8 @@ async function displayrecette(recette) {
             }
         })
             
-        // Recherche dans Name OU Description OU Ingredients.ingredient      
+        // Recherche dans Name OU Description OU Ingredients.ingredient
+        // si ing = 1 alors l'input est présent dans un ingredient de recette 
         if( 
             (recette.name.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "")))
             ||
@@ -66,6 +68,8 @@ async function displayrecette(recette) {
     
     }
     else{
+        console.log("Recherche sur aucun critere donc j'affiche tout")
+
         recette.forEach((recette) => {
             var [ingrec] = [recette.ingredients]
     
@@ -83,18 +87,22 @@ async function displayrecette(recette) {
     }
     // Debut recherche si un tag est coché
     else{
-        console.log("yauntruc")
+        console.log("un tag a été selectionné")
         // Est ce qu'il y a du text dans l'input ?
         if((document.getElementById("myInput").value).length > 2){
-            console.log(selecting)
+            console.log("il y a un tag et un input")
 
 
             recette.forEach((recette) => {
                 window.ingselect = 0
-                recette.ingredients.forEach((liste) => {
+                // window.appselect = 0
+                // if(recette.appliance == selectapp){
+                //     window.appselect = 2
+                // }
+                
+                recette.ingredients.forEach((liste) => {      
                 if (liste.ingredient == selecting){
                     window.ingselect = 2
-                    console.log(ingselect)
                 }
             })
 
@@ -105,8 +113,6 @@ async function displayrecette(recette) {
             }
         })
         
-
-
                 if( (
                     (
                     (recette.name.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "")))
@@ -116,11 +122,15 @@ async function displayrecette(recette) {
                     ing == 1
                     )
                     )
-                    &&
-                    ingselect ==2 )
+                    &&(
+                        ingselect ==2)
+                    // (ingselect ==2 && appselect == 2)||
+                    // (ingselect ==2 || appselect == 2))
+                )
                     {
                     var listerecette = recetteFactory(recette);
-                    console.log(selecting)
+                    console.log(ingselect)
+
                     const recetteCardDOM = listerecette.recetteCardDOM();
                     listerecettediv.appendChild(recetteCardDOM);
                     const pushinputselectingvalue = recettetab.push(listerecette);
@@ -131,7 +141,7 @@ async function displayrecette(recette) {
             
             }
             else{
-                // pas d'input uniquement des tags
+// pas d'input uniquement des tags
                 recette.forEach((recette) => {
                     var [ingrec] = [recette.ingredients]
                     window.ingselect = 0
@@ -166,7 +176,9 @@ async function displayrecette(recette) {
 
                
             }
+// Verif nombre recette
     console.log("nombre recette "+[recettetab.length])
+// Gestion des options des select
     recuplistapparaeil(recettetab)
     recuplistusten(recettetab)
     recuplistingredient(recettetab)
