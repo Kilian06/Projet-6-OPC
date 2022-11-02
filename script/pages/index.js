@@ -168,7 +168,6 @@ console.log(recettetab)
             else{
 // pas d'input uniquement des tags
                 recette.forEach((recette) => {
-                    console.log(recette)
                     window.ingselect = 0
                     window.appselect = 0
                     window.ustselect = 0
@@ -186,7 +185,6 @@ console.log(recettetab)
                         }
                     
                     recette.ustensils.forEach((list) => {
-                        console.log(list)
                         for(const element of selectust){
                             if (list.includes(element)){
                                 console.log("ok")
@@ -251,8 +249,10 @@ function gettaging(event){
     var inputselecting = event.currentTarget.options[event.currentTarget.selectedIndex]
     var inputselectingvalue = inputselecting.value
     const pushinputselectingvalueing = selecting.push(inputselectingvalue)
+    // const optioning = event.currentTarget.options[event.currentTarget.selectedIndex]
+    // console.log(optioning)
+    // optioning.remove()
     initRecette()
-
 }
 
 function gettagust(event){
@@ -272,12 +272,7 @@ function gettagapp(event){
 
 
 
-// function gettagapp(event){
-//     var inputselecting = event.currentTarget.options[event.currentTarget.selectedIndex]
-//     var inputselectingvalue = inputselecting.value
-//     const pushinputselectingvalue = selectvalue.push(inputselectingvalue)
-//     console.log(selectapp)
-// }
+
 
 
 
