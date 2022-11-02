@@ -1,7 +1,6 @@
-// document.getElementById("selectapp").addEventListener("change",function(){
-//     console.log(this.value)
+import {initRecette} from "../pages/index.js";
 
-// })
+
 
 const button = document.querySelector('#add-button');
 const tagInput = document.getElementById("selectapp");
@@ -35,6 +34,13 @@ const createTag = (tagValue) => {
 };
 
 const handleRemoveTag = (e) => {
+    console.log(selectapp)
+    var inputclosetag = e.target.parentElement.textContent
+    const positiontag = selectapp.indexOf(inputclosetag)
+    if (positiontag > -1) {
+        selectapp.splice(positiontag, 1);
+      }
+    initRecette()
     const item = e.target.textContent;
     e.target.parentElement.remove();
     tags.splice(tags.indexOf(item), 1);

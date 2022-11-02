@@ -9,17 +9,14 @@ export async function getrecette(){
 }
 getrecette()
 
-let recettetabwindows
 let recettetab = []
-let myingredient 
+let myingredient
 
 
 
 async function displayrecette(recette) {
 // RAZ de l'affichage des recettes
-    let recettetab = []
-
-// var myingredient = null;
+let recettetab = []
 
 // Const pour position affichage recette dans HTML
     const listerecettediv = document.getElementById("affichagerecette");
@@ -37,137 +34,178 @@ async function displayrecette(recette) {
     if((document.getElementById("myInput").value).length > 2){
         console.log("Recherche Input uniquement")
 
+
 // Je cherche dans chaque recette
     recette.forEach((recette) => {
 //String object Ingredient pour includes
-        window.ing = 0
-            recette.ingredients.forEach((liste) => {
-            if (liste.ingredient.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ""))){
-                window.ing = 1
+         window.inginput = 0
+            recette.ingredients.forEach((objetIngredient) => {
+            if (miseEnFormeText(objetIngredient.ingredient).includes(miseEnFormeText(inputtext))){
+                window.inginput = 1
             }
         })
             
         // Recherche dans Name OU Description OU Ingredients.ingredient
         // si ing = 1 alors l'input est présent dans un ingredient de recette 
         if( 
-            (recette.name.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "")))
+            (miseEnFormeText(recette.name).includes(miseEnFormeText(inputtext)))
             ||
-            (recette.description.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "")))
+            (miseEnFormeText(recette.description).includes(miseEnFormeText(inputtext)))
             ||
-            ing == 1
+            inginput == 1
         )
             {
-            var listerecette = recetteFactory(recette);
-            const recetteCardDOM = listerecette.recetteCardDOM();
-            listerecettediv.appendChild(recetteCardDOM);
-            const pushinputselectingvalue = recettetab.push(listerecette);
+                // printRecette(recette)
+                const listerecettediv = document.getElementById("affichagerecette");
+                var listerecette = recetteFactory(recette);
+                const recetteCardDOM = listerecette.recetteCardDOM();
+                listerecettediv.appendChild(recetteCardDOM);
+                var pushinputselectingvalue = recettetab.push(listerecette);
             }
     }
    ) 
+   //// Fin Affichage input Seul
+   //// Debut Affichage pas d'input ni de tag
 
-    
     }
     else{
         console.log("Recherche sur aucun critere donc j'affiche tout")
-
         recette.forEach((recette) => {
             var [ingrec] = [recette.ingredients]
     
             Object.values(ingrec).forEach(ing => {
                 window.ing = ing
                 })  
+                // printRecette(recette)
+                const listerecettediv = document.getElementById("affichagerecette");
                 var listerecette = recetteFactory(recette);
-                // console.log(listerecette)
                 const recetteCardDOM = listerecette.recetteCardDOM();
                 listerecettediv.appendChild(recetteCardDOM);
-                const pushinputselectingvalue = recettetab.push(listerecette);
+                var pushinputselectingvalue = recettetab.push(listerecette);
             }
                 )
         }
     }
-    // Debut recherche si un tag est coché
+   //// Fin Affichage pas d'input ni de tag
+   //// Debut Affichage un de si il y a un tag tag
+
     else{
         console.log("un tag a été selectionné")
         // Est ce qu'il y a du text dans l'input ?
         if((document.getElementById("myInput").value).length > 2){
-            console.log("il y a un tag et un input")
 
-
-            recette.forEach((recette) => {
-                window.ingselect = 0
-                // window.appselect = 0
-                // if(recette.appliance == selectapp){
-                //     window.appselect = 2
-                // }
-                
-                recette.ingredients.forEach((liste) => {      
-                if (liste.ingredient == selecting){
-                    window.ingselect = 2
+///////////////////
+// Je cherche dans chaque recette
+recette.forEach((recette) => {
+    //String object Ingredient pour includes
+             window.inginput = 0
+                recette.ingredients.forEach((objetIngredient) => {
+                if (miseEnFormeText(objetIngredient.ingredient).includes(miseEnFormeText(inputtext))){
+                    window.inginput = 1
                 }
             })
-
-            window.ing = 0
-            recette.ingredients.forEach((liste) => {
-            if (liste.ingredient.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ""))){
-                window.ing = 1
-            }
-        })
-        
-                if( (
-                    (
-                    (recette.name.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "")))
-                    ||
-                    (recette.description.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "").includes(inputtext.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "")))
-                    ||
-                    ing == 1
-                    )
-                    )
-                    &&(
-                        ingselect ==2)
-                    // (ingselect ==2 && appselect == 2)||
-                    // (ingselect ==2 || appselect == 2))
+            console.log(recette)
+            window.ingselect = 0
+            window.appselect = 0
+            window.ustselect = 0
+            recette.ingredients.forEach((liste) => {    
+                for(const element of selecting){
+                    if (liste.ingredient.includes(element)){
+                        window.ingselect = ingselect + 1
+                    }
+                }
+            })
+                for(const element of selectapp){
+                    if (recette.appliance.includes(element)){
+                        window.appselect = appselect + 1
+                    }
+                }
+            
+            recette.ustensils.forEach((list) => {
+                for(const element of selectust){
+                    if (list.includes(element)){
+                        window.ustselect = ustselect + 1
+                    }
+                }
+            })
+                
+            // Recherche dans Name OU Description OU Ingredients.ingredient
+            // si ing = 1 alors l'input est présent dans un ingredient de recette 
+            if(( 
+                (miseEnFormeText(recette.name).includes(miseEnFormeText(inputtext))) // Verification input Nom recette
+                ||
+                (miseEnFormeText(recette.description).includes(miseEnFormeText(inputtext))) // Verification input Description recette
+                ||
+                inginput == 1) // Verification input dans la liste des ingredient d'une recette
+                &&
+                (
+                    (ingselect == selecting.length) // Verification des tag ingredients
+                    &&
+                    (appselect == selectapp.length) // Verification des tag appareils
+                    &&
+                    (ustselect == selectust.length) // Verification des tags Ustensiles
                 )
-                    {
-                    var listerecette = recetteFactory(recette);
-                    console.log(ingselect)
+            )
 
+
+                {
+                    // printRecette(recette)
+                    const listerecettediv = document.getElementById("affichagerecette");
+                    var listerecette = recetteFactory(recette);
                     const recetteCardDOM = listerecette.recetteCardDOM();
                     listerecettediv.appendChild(recetteCardDOM);
-                    const pushinputselectingvalue = recettetab.push(listerecette);
-                    }
-            }
-           ) 
+                    var pushinputselectingvalue = recettetab.push(listerecette);
+                }
+        }
+       ) 
+    
+console.log(recettetab)
         
-            
-            }
+
+
+        }
+
             else{
 // pas d'input uniquement des tags
                 recette.forEach((recette) => {
-                    var [ingrec] = [recette.ingredients]
+                    console.log(recette)
                     window.ingselect = 0
-                    recette.ingredients.forEach((liste) => {
-                    if (liste.ingredient == selecting){
-                        window.ingselect = 2
-                        console.log(ingselect)
-                    }
-                })
+                    window.appselect = 0
+                    window.ustselect = 0
+                    recette.ingredients.forEach((liste) => {    
+                        for(const element of selecting){
+                            if (liste.ingredient.includes(element)){
+                                window.ingselect = ingselect + 1
+                            }
+                        }
+                    })
+                        for(const element of selectapp){
+                            if (recette.appliance.includes(element)){
+                                window.appselect = appselect + 1
+                            }
+                        }
+                    
+                    recette.ustensils.forEach((list) => {
+                        console.log(list)
+                        for(const element of selectust){
+                            if (list.includes(element)){
+                                console.log("ok")
+                                window.ustselect = ustselect + 1
+                            }
+                        }
+                    })
+
             
-                    Object.values(ingrec).forEach(ing => {
-                        window.ing = ing
-                        })
     
-                    var [usten] = [recette.ustensils]
-    
-                    if(ingselect ==2)
+                    if((ingselect == selecting.length)&&(appselect == selectapp.length)&&(ustselect == selectust.length))
 
                         {
-                        console.log("Y a un Tag")
-                        var listerecette = recetteFactory(recette);
-                        console.log(selecting)
-                        console.log(ing.ingredient.includes(selecting))
-                        const recetteCardDOM = listerecette.recetteCardDOM();
-                        listerecettediv.appendChild(recetteCardDOM);
-                        const pushinputselectingvalue = recettetab.push(listerecette);
+                            // printRecette(recette)
+                            const listerecettediv = document.getElementById("affichagerecette");
+                            var listerecette = recetteFactory(recette);
+                            const recetteCardDOM = listerecette.recetteCardDOM();
+                            listerecettediv.appendChild(recetteCardDOM);
+                            var pushinputselectingvalue = recettetab.push(listerecette);
                         }
                 }
                 )
@@ -176,19 +214,21 @@ async function displayrecette(recette) {
 
                
             }
+    console.log(recettetab)
 // Verif nombre recette
     console.log("nombre recette "+[recettetab.length])
+    console.log(selecting)
 // Gestion des options des select
-    recuplistapparaeil(recettetab)
-    recuplistusten(recettetab)
-    recuplistingredient(recettetab)
+recuplistapparaeil(recettetab)
+recuplistusten(recettetab)
+recuplistingredient(recettetab)
+
 }
 
 
 
 
-async function initRecette() {
-    // Récupère les datas des photographes
+export async function initRecette() {
     document.getElementById("affichagerecette").innerHTML = ""
     const listeRecettebrut = await getrecette();
     displayrecette(listeRecettebrut);
@@ -202,9 +242,9 @@ inputing.addEventListener("input", initRecette);
 
 // document.getElementById("selecting").addEventListener("change",initRecette)
 
-let selecting = []
-let selectust = []
-let selectapp = []
+window.selecting = []
+window.selectust = []
+window.selectapp = []
 
 
 function gettaging(event){
@@ -240,14 +280,6 @@ function gettagapp(event){
 // }
 
 
-function closetag(event){
-    var inputclosetag = event.target.textContent
-    const positiontag = selectvalue.indexOf(inputclosetag)
-    if (positiontag > -1) { // only splice array when item is found
-        array.splice(positiontag, 1); // 2nd parameter means remove one item only
-      }
-      console.log(selectvalue)
-}
 
 document.getElementById("selecting").addEventListener("change",gettaging)
 document.getElementById("selectust").addEventListener("change",gettagust)
@@ -256,6 +288,18 @@ document.getElementById("selectapp").addEventListener("change",gettagapp)
 
 
 
-// event sur gettag
+function miseEnFormeText(text){
+    return text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "")
 
+}
+
+
+
+function printRecette (recette){
+    const listerecettediv = document.getElementById("affichagerecette");
+    var listerecette = recetteFactory(recette);
+    const recetteCardDOM = listerecette.recetteCardDOM();
+    listerecettediv.appendChild(recetteCardDOM);
+    var pushinputselectingvalue = recettetab.push(listerecette);
+}
 
