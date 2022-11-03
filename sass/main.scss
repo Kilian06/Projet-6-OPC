@@ -32,4 +32,43 @@ main{
     flex-wrap: nowrap;
     padding-top: 20px;
     position: absolute;
+    
+}
+
+
+.result-message{
+    margin: 20px 0px;
+    height: 70px;
+    display: flex;
+    vertical-align: middle;
+    border-radius:5px;
+    font-size: large;
+}
+
+.zone-nombre{
+    margin: auto 20px;
+}
+
+.init{
+    background-color: #d04f4f6b;
+    color: $colorlogo;
+}
+
+.erreur{
+    background-color: $colorlogo;
+    color: white;
+}
+
+.reponse{
+    background-color: $colorgris;
+    color: black;
+}
+
+.close-result{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    margin-left: 15px;
+    background: url(/data/image/icons8-close.svg) center center/ 50px no-repeat;
 }

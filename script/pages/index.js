@@ -14,6 +14,8 @@ let myingredient
 
 
 
+
+
 async function displayrecette(recette) {
 // RAZ de l'affichage des recettes
 let recettetab = []
@@ -104,7 +106,6 @@ recette.forEach((recette) => {
                     window.inginput = 1
                 }
             })
-            console.log(recette)
             window.ingselect = 0
             window.appselect = 0
             window.ustselect = 0
@@ -158,9 +159,7 @@ recette.forEach((recette) => {
                 }
         }
        ) 
-    
-console.log(recettetab)
-        
+         
 
 
         }
@@ -187,7 +186,6 @@ console.log(recettetab)
                     recette.ustensils.forEach((list) => {
                         for(const element of selectust){
                             if (list.includes(element)){
-                                console.log("ok")
                                 window.ustselect = ustselect + 1
                             }
                         }
@@ -212,14 +210,11 @@ console.log(recettetab)
 
                
             }
-    console.log(recettetab)
-// Verif nombre recette
-    console.log("nombre recette "+[recettetab.length])
-    console.log(selecting)
 // Gestion des options des select
 recuplistapparaeil(recettetab)
 recuplistusten(recettetab)
 recuplistingredient(recettetab)
+printResultNumber(recettetab)
 
 }
 
@@ -297,4 +292,45 @@ function printRecette (recette){
     listerecettediv.appendChild(recetteCardDOM);
     var pushinputselectingvalue = recettetab.push(listerecette);
 }
+
+async function printResultNumber (recettetab){
+    var zonenumberresult = document.getElementById("resultmsg")
+    const listeRecettebrut = await getrecette();
+
+
+    if(document.querySelector(".zone-nombre") != null){
+        document.querySelector(".zone-nombre").remove()
+    }
+        if(recettetab.length == listeRecettebrut.length){     
+        zonenumberresult.setAttribute("class","result-message init")
+        var nombreRecette = document.createElement("div")
+        nombreRecette.setAttribute("class","zone-nombre")
+        var closeNumber = document.createElement("img")
+        closeNumber.setAttribute("class","close-resutl")
+        closeNumber.setAttribute("id","close-resutl")
+        zonenumberresult.appendChild(nombreRecette)
+        zonenumberresult.appendChild(closeNumber)
+        nombreRecette.textContent = " Pour commencer a effectuer une recherche merci de saisir des éléments dans la barre de recherche ou de selectionner des tags"}
+
+        if((recettetab.length > 1)&&(recettetab.length < listeRecettebrut.length)){        
+        zonenumberresult.setAttribute("class","result-message reponse")
+        var nombreRecette = document.createElement("div")
+        nombreRecette.setAttribute("class","zone-nombre")
+        zonenumberresult.appendChild(nombreRecette)
+        nombreRecette.textContent = recettetab.length + " recettes correspond à votre recherche"}
+
+        if(recettetab.length == 1){        
+        zonenumberresult.setAttribute("class","result-message reponse")
+        var nombreRecette = document.createElement("div")
+        nombreRecette.setAttribute("class","zone-nombre")
+        zonenumberresult.appendChild(nombreRecette)
+        nombreRecette.textContent = recettetab.length + " recette correspond à votre recherche"}
+
+        if(recettetab.length == 0){        
+        zonenumberresult.setAttribute("class","result-message erreur")
+        var nombreRecette = document.createElement("div")
+        nombreRecette.setAttribute("class","zone-nombre")
+        zonenumberresult.appendChild(nombreRecette)
+        nombreRecette.textContent = " Aucune recette correspond à votre recherche"}
+        }
 
