@@ -12,6 +12,7 @@ const tags = [];
 
 const createTag = (tagValue) => {
     const value = tagValue.trim();
+    console.log(value)
 
     if (value === '' || tags.includes(value)) return;
 

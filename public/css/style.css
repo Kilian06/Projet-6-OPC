@@ -144,4 +144,41 @@ main {
   position: absolute;
 }
 
+.result-message {
+  margin: 20px 0px;
+  height: 70px;
+  display: flex;
+  vertical-align: middle;
+  border-radius: 5px;
+  font-size: large;
+}
+
+.zone-nombre {
+  margin: auto 20px;
+}
+
+.init {
+  background-color: rgba(208, 79, 79, 0.4196078431);
+  color: #D04F4F;
+}
+
+.erreur {
+  background-color: #D04F4F;
+  color: white;
+}
+
+.reponse {
+  background-color: #E7E7E7;
+  color: black;
+}
+
+.close-result {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  margin-left: 15px;
+  background: url(/data/image/icons8-close.svg) center center/50px no-repeat;
+}
+
 /*# sourceMappingURL=style.css.map */
