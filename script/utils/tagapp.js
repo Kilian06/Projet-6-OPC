@@ -10,8 +10,7 @@ const tagContainer = document.querySelector('.tag-container-app');
 const tags = [];
 
 
-
-const createTag = (tagValue) => {
+export const createTagApp = (tagValue) => {
     const value = tagValue.trim();
 
     if (value === '' || tags.includes(value)) return;
@@ -48,14 +47,5 @@ const handleRemoveTag = (e) => {
 
 const handleFormSubmit = (e) => {
     e.preventDefault();
-    createTag(tagInput.value);
+    createTagApp(tagInput.value);
 };
-
-tagInput.addEventListener('change', (e) => {
-    const { key } = e;
-    if (key === ',') {
-        createTag(tagInput.value.substring(0, tagInput.value.length - 1));
-    }
-});
-
-document.getElementById("selectapp").addEventListener("change", handleFormSubmit);

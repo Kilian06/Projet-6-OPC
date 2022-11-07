@@ -5,16 +5,6 @@
   margin-top: 80px;
 }
 
-.filterselect {
-  color: white;
-  width: 170px;
-  height: 69px;
-  border-radius: 5px;
-  border: none;
-  font-size: large;
-  padding-left: 20px;
-}
-
 .bleu {
   background-color: #3282F7;
 }
@@ -25,6 +15,243 @@
 
 .orange {
   background-color: #ED6454;
+}
+
+.ingredient {
+  background-color: #3282F7;
+  border-radius: 5px;
+  height: 60px;
+  color: white;
+  font-size: large;
+  max-width: 600px;
+  position: static;
+  z-index: 10;
+}
+
+.inginputdiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ingopen {
+  display: flex;
+  flex-direction: row;
+}
+
+.ingbtn {
+  display: block;
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 200px;
+}
+
+#filterInputIng {
+  display: none;
+  border: none;
+  height: 60px;
+  width: calc(100% - 50px);
+  background-color: #3282F7;
+  border-radius: 5px 5px 0 0;
+}
+#filterInputIng::placeholder {
+  color: rgb(188, 188, 188);
+  padding-left: 40px;
+  font-size: large;
+}
+
+.arrowingopen {
+  width: 50px;
+  display: block;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.arrowingclose {
+  width: 50px;
+  display: none;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.ingredient ul {
+  display: none;
+  flex-wrap: wrap;
+  max-height: 250px;
+  padding-left: 20px;
+  background-color: #3282F7;
+  width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 0 0 5px 5px;
+}
+
+.listeingredient {
+  flex: 1 0 calc(30% - 10px);
+  margin: 5px;
+  width: auto;
+  list-style: none;
+}
+.listeingredient:hover {
+  color: rgb(200, 200, 200);
+}
+
+.appareils {
+  background-color: #68D9A4;
+  border-radius: 5px;
+  height: 60px;
+  color: white;
+  font-size: large;
+  max-width: 600px;
+  position: static;
+  z-index: 10;
+}
+
+.appinputdiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.appopen {
+  display: flex;
+  flex-direction: row;
+}
+
+.appbtn {
+  display: block;
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 200px;
+}
+
+#filterInputApp {
+  display: none;
+  border: none;
+  height: 60px;
+  width: calc(100% - 50px);
+  background-color: #68D9A4;
+  border-radius: 5px 5px 0 0;
+}
+#filterInputApp::placeholder {
+  color: rgb(150, 150, 150);
+  padding-left: 40px;
+  font-size: large;
+}
+
+.arrowappopen {
+  width: 50px;
+  display: block;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.arrowappclose {
+  width: 50px;
+  display: none;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.appareils ul {
+  display: none;
+  flex-wrap: wrap;
+  max-height: 250px;
+  padding-left: 20px;
+  background-color: #68D9A4;
+  width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 0 0 5px 5px;
+}
+
+.listeappareil {
+  flex: 1 0 calc(30% - 10px);
+  margin: 5px;
+  width: auto;
+  list-style: none;
+}
+.listeappareil:hover {
+  color: rgb(150, 150, 150);
+}
+
+.ustensiles {
+  background-color: #ED6454;
+  border-radius: 5px;
+  height: 60px;
+  color: white;
+  font-size: large;
+  max-width: 600px;
+  position: static;
+  z-index: 10;
+}
+
+.ustinputdiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ustopen {
+  display: flex;
+  flex-direction: row;
+}
+
+.ustbtn {
+  display: block;
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 200px;
+}
+
+#filterInputUst {
+  display: none;
+  border: none;
+  height: 60px;
+  width: calc(100% - 50px);
+  background-color: #ED6454;
+  border-radius: 5px 5px 0 0;
+}
+#filterInputUst::placeholder {
+  color: rgb(188, 188, 188);
+  padding-left: 40px;
+  font-size: large;
+}
+
+.arrowustopen {
+  width: 50px;
+  display: block;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.arrowustclose {
+  width: 50px;
+  display: none;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.ustensiles ul {
+  display: none;
+  flex-wrap: wrap;
+  max-height: 250px;
+  padding-left: 20px;
+  background-color: #ED6454;
+  width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 0 0 5px 5px;
+}
+
+.listeust {
+  flex: 1 0 calc(30% - 10px);
+  margin: 5px;
+  width: auto;
+  list-style: none;
+}
+.listeust:hover {
+  color: rgb(200, 200, 200);
 }
 
 .result {
@@ -47,20 +274,35 @@
   border-radius: 5px;
   border: none;
   margin-top: 40px;
+  position: relative;
 }
 
-.resultatrecherche img {
+.imgrecette {
   height: 178px;
 }
 
 .divzonerecette {
   background-color: #E7E7E7;
   border-radius: 0 0 5px 5px;
+  height: 150px;
+  padding: 20px;
+}
+
+.titrerecette {
+  font-size: large;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  white-space: nowrap;
 }
 
 .zonetitretimer {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .zoneingdes {
@@ -70,14 +312,40 @@
 }
 
 .zoneingdes span {
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.zoneingdes p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  width: 200px;
 }
 
 .descriptionrecette {
   font-size: 14px;
   width: 45%;
-  height: 109px;
+  height: 102px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
   overflow: hidden;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.pictohorloge {
+  height: 20px;
+}
+
+.timerecette {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 125px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
 }
 
 :root {
@@ -116,6 +384,11 @@
   top: 5px;
   margin-left: 15px;
   background: url(/data/image/icons8-close.svg) center center/20px no-repeat;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 header {

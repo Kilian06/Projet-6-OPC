@@ -5,8 +5,10 @@
 @import "../sass/composants/tag.scss";
 
 
-
-
+*{
+    margin: 0;
+    padding: 0;
+}
 
 header{
 text-align:center;

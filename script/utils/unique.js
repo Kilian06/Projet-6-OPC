@@ -1,6 +1,6 @@
 export function recuplistapparaeil(recettetab) {
   const listappareil = recettetab;
-  document.querySelectorAll("option.listeappareil").forEach((e) => e.remove());
+  document.querySelectorAll(".listeappareil").forEach((e) => e.remove());
   const listappareils = [
     ...new Set(listappareil.map((item) => item.appliance)),
   ];
@@ -11,19 +11,20 @@ export function recuplistapparaeil(recettetab) {
   });
   const selectapp = document.getElementById("selectapp");
   for (var i = 0; i < appareiluniquevalue.length; i++) {
-    var option = document.createElement("OPTION"),
+    var option = document.createElement("li"),
       txt = document.createTextNode(appareiluniquevalue[i]);
     option.appendChild(txt);
     option.setAttribute("class", "listeappareil");
-
     option.setAttribute("value", appareiluniquevalue[i]);
     selectapp.insertBefore(option, selectapp.lastChild);
   }
 }
 
+
+
 export function recuplistusten(recettetab) {
   const listelement = recettetab;
-  document.querySelectorAll("option.listeust").forEach((e) => e.remove());
+  document.querySelectorAll(".listeust").forEach((e) => e.remove());
   const listeUstensils = [
     ...new Set(listelement.map((item) => item.ustensils)),
   ];
@@ -38,7 +39,7 @@ export function recuplistusten(recettetab) {
 
   const selectust = document.getElementById("selectust");
   for (var i = 0; i < ustensilsUniqueSort.length; i++) {
-    var option = document.createElement("OPTION"),
+    var option = document.createElement("li"),
       txt = document.createTextNode(ustensilsUniqueSort[i]);
     option.appendChild(txt);
     option.setAttribute("class", "listeust");
@@ -50,7 +51,7 @@ export function recuplistusten(recettetab) {
 export function recuplistingredient(recettetab) {
   const listelement = recettetab;
   document
-    .querySelectorAll("option.listeingredient")
+    .querySelectorAll(".listeingredient")
     .forEach((e) => e.remove());
   const listeIngredients = [
     ...new Set(listelement.map((item) => item.ingredients)),
@@ -68,7 +69,7 @@ export function recuplistingredient(recettetab) {
   });
   const selecting = document.getElementById("selecting");
   for (var i = 0; i < ingredientUniqueSansMaj.length; i++) {
-    var option = document.createElement("OPTION"),
+    var option = document.createElement("li"),
       txt = document.createTextNode(ingredientUniqueSansMaj[i]);
     option.setAttribute("class", "listeingredient");
     option.appendChild(txt);

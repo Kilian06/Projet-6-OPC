@@ -8,15 +8,7 @@
     margin-top: 80px;
 }
 
-.filterselect{
-    color: white;
-    width: 170px;
-    height: 69px;
-    border-radius: 5px;
-    border: none;
-    font-size: large;
-    padding-left: 20px;
-}
+
 
 .bleu{
     background-color: $colorblue;
@@ -26,4 +18,248 @@
 }
 .orange{
     background-color: $colororange;
+}
+
+// Gestion liste tag Input Ingredient
+
+.ingredient{
+    background-color: $colorblue;
+    border-radius: 5px;
+    height: 60px;
+    color: white;
+    font-size: large;
+    max-width: 600px;
+    position: static;
+    z-index: 10;
+}
+
+.inginputdiv{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.ingopen{
+    display: flex;
+    flex-direction: row;
+}
+.ingbtn{
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 200px;
+}
+
+#filterInputIng{
+    display: none;
+    border: none;
+    height: 60px;
+    width: calc(100% - 50px);
+    background-color: $colorblue;
+    border-radius: 5px 5px 0 0;
+    &::placeholder{
+        color: rgb(188, 188, 188);
+        padding-left: 40px;
+        font-size: large;
+}
+}
+
+.arrowingopen{
+    width: 50px;
+    display: block;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.arrowingclose{
+    width: 50px;
+    display: none;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.ingredient ul{
+    display: none;
+    flex-wrap: wrap;
+    max-height: 250px;
+    padding-left: 20px;
+    background-color: $colorblue;
+    width: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border-radius: 0 0 5px 5px;
+
+}
+
+.listeingredient{
+    flex: 1 0 calc(30% - 10px);
+    margin: 5px;
+    width: auto;
+    list-style: none;
+    &:hover{
+        color: rgb(200, 200, 200);
+    }
+    
+}
+
+// Gestion liste tag Input Appareils
+
+.appareils{
+    background-color: $colorgreen;
+    border-radius: 5px;
+    height: 60px;
+    color: white;
+    font-size: large;
+    max-width: 600px;
+    position: static;
+    z-index: 10;
+}
+
+.appinputdiv{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.appopen{
+    display: flex;
+    flex-direction: row;
+}
+.appbtn{
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 200px;
+}
+
+#filterInputApp{
+    display: none;
+    border: none;
+    height: 60px;
+    width: calc(100% - 50px);
+    background-color: $colorgreen;
+    border-radius: 5px 5px 0 0;
+    &::placeholder{
+        color: rgb(150, 150, 150);
+        padding-left: 40px;
+        font-size: large;
+}
+}
+
+.arrowappopen{
+    width: 50px;
+    display: block;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.arrowappclose{
+    width: 50px;
+    display: none;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.appareils ul{
+    display: none;
+    flex-wrap: wrap;
+    max-height: 250px;
+    padding-left: 20px;
+    background-color: $colorgreen;
+    width: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border-radius: 0 0 5px 5px;
+}
+
+.listeappareil{
+    flex: 1 0 calc(30% - 10px);
+    margin: 5px;
+    width: auto;
+    list-style: none;
+    &:hover{
+        color: rgb(150, 150, 150);
+    }
+}
+
+
+// Gestion liste tag Input Ustensiles
+
+.ustensiles{
+    background-color: $colororange;
+    border-radius: 5px;
+    height: 60px;
+    color: white;
+    font-size: large;
+    max-width: 600px;
+    position: static;
+    z-index: 10;
+}
+
+.ustinputdiv{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.ustopen{
+    display: flex;
+    flex-direction: row;
+}
+.ustbtn{
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 200px;
+}
+
+#filterInputUst{
+    display: none;
+    border: none;
+    height: 60px;
+    width: calc(100% - 50px);
+    background-color: $colororange;
+    border-radius: 5px 5px 0 0;
+    &::placeholder{
+        color: rgb(188, 188, 188);
+        padding-left: 40px;
+        font-size: large;
+}
+}
+
+.arrowustopen{
+    width: 50px;
+    display: block;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.arrowustclose{
+    width: 50px;
+    display: none;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.ustensiles ul{
+    display: none;
+    flex-wrap: wrap;
+    max-height: 250px;
+    padding-left: 20px;
+    background-color: $colororange;
+    width: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border-radius: 0 0 5px 5px;
+
+}
+
+.listeust{
+    flex: 1 0 calc(30% - 10px);
+    margin: 5px;
+    width: auto;
+    list-style: none;
+    &:hover{
+        color: rgb(200, 200, 200);
+    }
 }

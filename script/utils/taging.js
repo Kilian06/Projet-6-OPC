@@ -10,9 +10,8 @@ const tags = [];
 
 
 
-const createTag = (tagValue) => {
+export const createTagIng = (tagValue) => {
     const value = tagValue.trim();
-    console.log(value)
 
     if (value === '' || tags.includes(value)) return;
 
@@ -48,14 +47,5 @@ const handleRemoveTag = (e) => {
 
 const handleFormSubmit = (e) => {
     e.preventDefault();
-    createTag(tagInput.value);
+    createTagIng(tagInput.value);
 };
-
-tagInput.addEventListener('change', (e) => {
-    const { key } = e;
-    if (key === ',') {
-        createTag(tagInput.value.substring(0, tagInput.value.length - 1));
-    }
-});
-
-document.getElementById("selecting").addEventListener("change", handleFormSubmit);

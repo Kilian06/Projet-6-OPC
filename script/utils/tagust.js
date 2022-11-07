@@ -10,7 +10,7 @@ const tags = [];
 
 
 
-const createTag = (tagValue) => {
+export const createTagUst = (tagValue) => {
     const value = tagValue.trim();
 
     if (value === '' || tags.includes(value)) return;
@@ -50,11 +50,14 @@ const handleFormSubmit = (e) => {
     createTag(tagInput.value);
 };
 
-tagInput.addEventListener('change', (e) => {
-    const { key } = e;
-    if (key === ',') {
-        createTag(tagInput.value.substring(0, tagInput.value.length - 1));
-    }
-});
 
-document.getElementById("selectust").addEventListener("change", handleFormSubmit);
+
+
+// tagInput.addEventListener('change', (e) => {
+//     const { key } = e;
+//     if (key === ',') {
+//         createTag(tagInput.value.substring(0, tagInput.value.length - 1));
+//     }
+// });
+
+// document.getElementById("selectust").addEventListener("change", handleFormSubmit);

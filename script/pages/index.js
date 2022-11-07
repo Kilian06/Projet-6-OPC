@@ -1,4 +1,10 @@
 import { recuplistapparaeil, recuplistusten, recuplistingredient } from "../utils/unique.js";
+import { createTagApp} from "../utils/tagapp.js";
+import { createTagUst} from "../utils/tagust.js";
+import { createTagIng} from "../utils/taging.js";
+
+
+
 
 export async function getrecette(){
     return fetch(`./data/recipes.json`)
@@ -57,12 +63,7 @@ let recettetab = []
             inginput == 1
         )
             {
-                // printRecette(recette)
-                const listerecettediv = document.getElementById("affichagerecette");
-                var listerecette = recetteFactory(recette);
-                const recetteCardDOM = listerecette.recetteCardDOM();
-                listerecettediv.appendChild(recetteCardDOM);
-                var pushinputselectingvalue = recettetab.push(listerecette);
+                printRecette(recette,recettetab)
             }
     }
    ) 
@@ -78,12 +79,7 @@ let recettetab = []
             Object.values(ingrec).forEach(ing => {
                 window.ing = ing
                 })  
-                // printRecette(recette)
-                const listerecettediv = document.getElementById("affichagerecette");
-                var listerecette = recetteFactory(recette);
-                const recetteCardDOM = listerecette.recetteCardDOM();
-                listerecettediv.appendChild(recetteCardDOM);
-                var pushinputselectingvalue = recettetab.push(listerecette);
+                printRecette(recette,recettetab)
             }
                 )
         }
@@ -147,15 +143,8 @@ recette.forEach((recette) => {
                     (ustselect == selectust.length) // Verification des tags Ustensiles
                 )
             )
-
-
                 {
-                    // printRecette(recette)
-                    const listerecettediv = document.getElementById("affichagerecette");
-                    var listerecette = recetteFactory(recette);
-                    const recetteCardDOM = listerecette.recetteCardDOM();
-                    listerecettediv.appendChild(recetteCardDOM);
-                    var pushinputselectingvalue = recettetab.push(listerecette);
+                    printRecette(recette,recettetab)
                 }
         }
        ) 
@@ -190,18 +179,10 @@ recette.forEach((recette) => {
                             }
                         }
                     })
-
-            
-    
                     if((ingselect == selecting.length)&&(appselect == selectapp.length)&&(ustselect == selectust.length))
-
                         {
-                            // printRecette(recette)
-                            const listerecettediv = document.getElementById("affichagerecette");
-                            var listerecette = recetteFactory(recette);
-                            const recetteCardDOM = listerecette.recetteCardDOM();
-                            listerecettediv.appendChild(recetteCardDOM);
-                            var pushinputselectingvalue = recettetab.push(listerecette);
+                            printRecette(recette,recettetab)
+
                         }
                 }
                 )
@@ -215,6 +196,25 @@ recuplistapparaeil(recettetab)
 recuplistusten(recettetab)
 recuplistingredient(recettetab)
 printResultNumber(recettetab)
+
+
+document.querySelectorAll(".listeappareil").forEach((item, index) => { // here
+    item.addEventListener('click', function(e) {
+        createTagApp(e.target.innerText);
+        gettagapp(e.target.innerText)
+})})
+
+document.querySelectorAll(".listeust").forEach((item, index) => { // here
+    item.addEventListener('click', function(e) {
+        createTagUst(e.target.innerText);
+        gettagust(e.target.innerText)
+})})
+
+document.querySelectorAll(".listeingredient").forEach((item, index) => { // here
+    item.addEventListener('click', function(e) {
+        createTagIng(e.target.innerText);
+        gettaging(e.target.innerText)
+})})
 
 }
 
@@ -233,34 +233,31 @@ initRecette()
 var inputing = document.getElementById("myInput")
 inputing.addEventListener("input", initRecette);
 
-// document.getElementById("selecting").addEventListener("change",initRecette)
 
 window.selecting = []
 window.selectust = []
 window.selectapp = []
 
 
-function gettaging(event){
-    var inputselecting = event.currentTarget.options[event.currentTarget.selectedIndex]
-    var inputselectingvalue = inputselecting.value
+function gettaging(e){
+    var inputselecting = e
+    var inputselectingvalue = inputselecting
     const pushinputselectingvalueing = selecting.push(inputselectingvalue)
-    // const optioning = event.currentTarget.options[event.currentTarget.selectedIndex]
-    // console.log(optioning)
-    // optioning.remove()
     initRecette()
 }
 
-function gettagust(event){
-    var inputselectust = event.currentTarget.options[event.currentTarget.selectedIndex]
-    var inputselectustvalue = inputselectust.value
+function gettagust(e){
+    var inputselectust = e
+    var inputselectustvalue = inputselectust
     const pushinputselectingvalueust = selectust.push(inputselectustvalue)
     initRecette()
 
 }
 
-function gettagapp(event){
-    var inputselectapp = event.currentTarget.options[event.currentTarget.selectedIndex]
-    var inputselectappvalue = inputselectapp.value
+function gettagapp(e){
+    console.log(e)
+    var inputselectapp = e
+    var inputselectappvalue = inputselectapp
     const pushinputselectingvalue = selectapp.push(inputselectappvalue)
     initRecette()
 }
@@ -285,12 +282,12 @@ function miseEnFormeText(text){
 
 
 
-function printRecette (recette){
+function printRecette (recette,recettetab){
     const listerecettediv = document.getElementById("affichagerecette");
     var listerecette = recetteFactory(recette);
     const recetteCardDOM = listerecette.recetteCardDOM();
     listerecettediv.appendChild(recetteCardDOM);
-    var pushinputselectingvalue = recettetab.push(listerecette);
+    recettetab.push(listerecette);
 }
 
 async function printResultNumber (recettetab){
@@ -334,3 +331,5 @@ async function printResultNumber (recettetab){
         nombreRecette.textContent = " Aucune recette correspond à votre recherche"}
         }
 
+
+        

@@ -11,6 +11,7 @@ function recetteFactory(data) {
         divzonerecette.setAttribute("class", "divzonerecette")
 
         const imgrecette = document.createElement('img')
+        imgrecette.setAttribute("class","imgrecette")
 
         const namerecette = document.createElement('p')
         namerecette.setAttribute("class","titrerecette")
@@ -27,7 +28,11 @@ function recetteFactory(data) {
         const ingreslot = document.createElement('p')
         namerecette.textContent = name;
         descrecette.textContent = description;
-        timerecette.textContent = time +"minutes";
+        const pictohorloge = document.createElement('img')
+        pictohorloge.setAttribute("src","../data/image/lhorloge.png")
+        pictohorloge.setAttribute("class","pictohorloge")
+
+        timerecette.textContent = time +" min";
         Object.values(ingredients).forEach(val => {
             if (val.quantity === undefined) {
                 val.quantity = "";
@@ -43,7 +48,10 @@ function recetteFactory(data) {
         divzonerecette.appendChild(zoneingdes);
 
 
+
         zonetitretimer.appendChild(namerecette);
+        timerecette.appendChild(pictohorloge);
+
         zonetitretimer.appendChild(timerecette);
         zoneingdes.appendChild(ingreslot);
         zoneingdes.appendChild(descrecette);
