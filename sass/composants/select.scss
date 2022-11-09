@@ -48,6 +48,8 @@
     padding-left: 20px;
     padding-top: 20px;
     width: 200px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 #filterInputIng{
@@ -57,9 +59,13 @@
     width: calc(100% - 50px);
     background-color: $colorblue;
     border-radius: 5px 5px 0 0;
+    color: white;
+    font-size: x-large;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding-left: 20px;
     &::placeholder{
         color: rgb(188, 188, 188);
-        padding-left: 40px;
         font-size: large;
 }
 }
@@ -88,6 +94,8 @@
     overflow-y:scroll;
     overflow-x:hidden;
     border-radius: 0 0 5px 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 
 }
 
@@ -130,6 +138,8 @@
     padding-left: 20px;
     padding-top: 20px;
     width: 200px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 #filterInputApp{
@@ -139,9 +149,13 @@
     width: calc(100% - 50px);
     background-color: $colorgreen;
     border-radius: 5px 5px 0 0;
+    color: white;
+    font-size: x-large;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding-left: 20px;
     &::placeholder{
         color: rgb(150, 150, 150);
-        padding-left: 40px;
         font-size: large;
 }
 }
@@ -170,6 +184,8 @@
     overflow-y:scroll;
     overflow-x:hidden;
     border-radius: 0 0 5px 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 .listeappareil{
@@ -211,6 +227,8 @@
     padding-left: 20px;
     padding-top: 20px;
     width: 200px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 #filterInputUst{
@@ -220,9 +238,13 @@
     width: calc(100% - 50px);
     background-color: $colororange;
     border-radius: 5px 5px 0 0;
+    color: white;
+    font-size: x-large;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding-left: 20px;
     &::placeholder{
         color: rgb(188, 188, 188);
-        padding-left: 40px;
         font-size: large;
 }
 }
@@ -251,7 +273,8 @@
     overflow-y:scroll;
     overflow-x:hidden;
     border-radius: 0 0 5px 5px;
-
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 .listeust{

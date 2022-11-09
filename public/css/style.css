@@ -44,6 +44,8 @@
   padding-left: 20px;
   padding-top: 20px;
   width: 200px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 #filterInputIng {
@@ -53,10 +55,14 @@
   width: calc(100% - 50px);
   background-color: #3282F7;
   border-radius: 5px 5px 0 0;
+  color: white;
+  font-size: x-large;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding-left: 20px;
 }
 #filterInputIng::placeholder {
   color: rgb(188, 188, 188);
-  padding-left: 40px;
   font-size: large;
 }
 
@@ -84,6 +90,8 @@
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 0 0 5px 5px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 .listeingredient {
@@ -123,6 +131,8 @@
   padding-left: 20px;
   padding-top: 20px;
   width: 200px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 #filterInputApp {
@@ -132,10 +142,14 @@
   width: calc(100% - 50px);
   background-color: #68D9A4;
   border-radius: 5px 5px 0 0;
+  color: white;
+  font-size: x-large;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding-left: 20px;
 }
 #filterInputApp::placeholder {
   color: rgb(150, 150, 150);
-  padding-left: 40px;
   font-size: large;
 }
 
@@ -163,6 +177,8 @@
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 0 0 5px 5px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 .listeappareil {
@@ -202,6 +218,8 @@
   padding-left: 20px;
   padding-top: 20px;
   width: 200px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 #filterInputUst {
@@ -211,10 +229,14 @@
   width: calc(100% - 50px);
   background-color: #ED6454;
   border-radius: 5px 5px 0 0;
+  color: white;
+  font-size: x-large;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding-left: 20px;
 }
 #filterInputUst::placeholder {
   color: rgb(188, 188, 188);
-  padding-left: 40px;
   font-size: large;
 }
 
@@ -242,6 +264,8 @@
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 0 0 5px 5px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 .listeust {
@@ -374,6 +398,9 @@
   font-size: 16px;
   margin-right: 10px;
   padding: 10px 20px;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 .remove-tag {

@@ -43,43 +43,39 @@ async function displayrecette(recette) {
       console.log("Recherche Input uniquement");
 
       // Je cherche dans chaque recette
-      recette.forEach((recette) => {
-        //String object Ingredient pour includes
+      for (var i = 0, n = recette.length; i < n; i++) {
+        var recettei = recette[i];
+        var recettename = recette[i].name;
+        var recettedesc = recette[i].description;
+        var recetteing = recette[i].ingredients;
+
         window.inginput = 0;
-        recette.ingredients.forEach((objetIngredient) => {
+        for (var y = 0, m = recetteing.length; y < m; y++) {
           if (
-            miseEnFormeText(objetIngredient.ingredient).includes(
+            miseEnFormeText(recetteing[y].ingredient).includes(
               miseEnFormeText(inputtext)
             )
           ) {
             window.inginput = 1;
           }
-        });
-
+        }
         // Recherche dans Name OU Description OU Ingredients.ingredient
         // si ing = 1 alors l'input est présent dans un ingredient de recette
+
         if (
-          miseEnFormeText(recette.name).includes(miseEnFormeText(inputtext)) ||
-          miseEnFormeText(recette.description).includes(
-            miseEnFormeText(inputtext)
-          ) ||
+          miseEnFormeText(recettename).includes(miseEnFormeText(inputtext)) ||
+          miseEnFormeText(recettedesc).includes(miseEnFormeText(inputtext)) ||
           inginput == 1
         ) {
-          printRecette(recette, recettetab);
+          printRecette(recettei, recettetab);
         }
-      });
-      //// Fin Affichage input Seul
-      //// Debut Affichage pas d'input ni de tag
+      }
     } else {
       console.log("Recherche sur aucun critere donc j'affiche tout");
-      recette.forEach((recette) => {
-        var [ingrec] = [recette.ingredients];
-
-        Object.values(ingrec).forEach((ing) => {
-          window.ing = ing;
-        });
-        printRecette(recette, recettetab);
-      });
+      for (var i = 0, n = recette.length; i < n; i++) {
+        var recettei = recette[i];
+        printRecette(recettei, recettetab);
+      }
     }
   }
   //// Fin Affichage pas d'input ni de tag
@@ -90,91 +86,115 @@ async function displayrecette(recette) {
     if (document.getElementById("myInput").value.length > 2) {
       ///////////////////
       // Je cherche dans chaque recette
-      recette.forEach((recette) => {
-        //String object Ingredient pour includes
+
+      for (var i = 0, n = recette.length; i < n; i++) {
+        window.ingselect = 0;
+        window.appselect = 0;
+        window.ustselect = 0;
+        var recettei = recette[i];
+        var recettename = recette[i].name;
+        var recettedesc = recette[i].description;
+        var recetteing = recette[i].ingredients;
+        var recetteust = recette[i].ustensils;
         window.inginput = 0;
-        recette.ingredients.forEach((objetIngredient) => {
+        for (var y = 0, m = recetteing.length; y < m; y++) {
           if (
-            miseEnFormeText(objetIngredient.ingredient).includes(
+            miseEnFormeText(recetteing[y].ingredient).includes(
               miseEnFormeText(inputtext)
             )
           ) {
             window.inginput = 1;
+            console.log("on est la");
           }
-        });
-        window.ingselect = 0;
-        window.appselect = 0;
-        window.ustselect = 0;
-        recette.ingredients.forEach((liste) => {
+        }
+        console.log("on est la");
+
+        for (var z = 0, k = recetteing.length; z < k; z++) {
+          console.log("on est la");
+
           for (const element of selecting) {
-            if (liste.ingredient.includes(element)) {
+            if (
+              miseEnFormeText(recetteing[z].ingredient).includes(
+                miseEnFormeText(element)
+              )
+            ) {
               window.ingselect = ingselect + 1;
+              console.log("on est la");
             }
           }
-        });
+        }
         for (const element of selectapp) {
-          if (recette.appliance.includes(element)) {
+          if (recette[i].appliance.includes(element)) {
             window.appselect = appselect + 1;
           }
         }
-
-        recette.ustensils.forEach((list) => {
-          for (const element of selectust) {
-            if (list.includes(element)) {
-              window.ustselect = ustselect + 1;
-            }
+        for (const element of selectust) {
+          console.log(selectust);
+          console.log(element);
+          console.log(recetteust);
+          if (recetteust.includes(element)) {
+            window.ustselect = ustselect + 1;
           }
-        });
-
-        // Recherche dans Name OU Description OU Ingredients.ingredient
-        // si ing = 1 alors l'input est présent dans un ingredient de recette
-        if (
-          (miseEnFormeText(recette.name).includes(miseEnFormeText(inputtext)) || // Verification input Nom recette
-            miseEnFormeText(recette.description).includes(
-              miseEnFormeText(inputtext)
-            ) || // Verification input Description recette
-            inginput == 1) && // Verification input dans la liste des ingredient d'une recette
-          ingselect == selecting.length && // Verification des tag ingredients
-          appselect == selectapp.length && // Verification des tag appareils
-          ustselect == selectust.length // Verification des tags Ustensiles
-        ) {
-          printRecette(recette, recettetab);
         }
-      });
+
+        if (
+          (miseEnFormeText(recettename).includes(miseEnFormeText(inputtext)) ||
+            miseEnFormeText(recettedesc).includes(miseEnFormeText(inputtext)) ||
+            inginput == 1) &&
+          ingselect == selecting.length &&
+          appselect == selectapp.length &&
+          ustselect == selectust.length
+        ) {
+          printRecette(recettei, recettetab);
+        }
+      }
     } else {
       // pas d'input uniquement des tags
-      recette.forEach((recette) => {
+      for (var i = 0, n = recette.length; i < n; i++) {
         window.ingselect = 0;
         window.appselect = 0;
         window.ustselect = 0;
-        recette.ingredients.forEach((liste) => {
+        var recettei = recette[i];
+        var recettename = recette[i].name;
+        var recettedesc = recette[i].description;
+        var recetteing = recette[i].ingredients;
+        var recetteust = recette[i].ustensils;
+        window.inginput = 0;
+        for (var y = 0, m = recetteing.length; y < m; y++) {
           for (const element of selecting) {
-            if (liste.ingredient.includes(element)) {
+            if (
+              miseEnFormeText(recetteing[y].ingredient).includes(
+                miseEnFormeText(element)
+              )
+            ) {
+              console.log(recetteing[y].ingredient);
+              console.log(selecting);
               window.ingselect = ingselect + 1;
             }
           }
-        });
+        }
         for (const element of selectapp) {
-          if (recette.appliance.includes(element)) {
+          if (recette[i].appliance.includes(element)) {
             window.appselect = appselect + 1;
           }
         }
-
-        recette.ustensils.forEach((list) => {
-          for (const element of selectust) {
-            if (list.includes(element)) {
-              window.ustselect = ustselect + 1;
-            }
+        for (const element of selectust) {
+          console.log(selectust);
+          console.log(element);
+          console.log(recetteust);
+          if (recetteust.includes(element)) {
+            window.ustselect = ustselect + 1;
           }
-        });
+        }
+
         if (
           ingselect == selecting.length &&
           appselect == selectapp.length &&
           ustselect == selectust.length
         ) {
-          printRecette(recette, recettetab);
+          printRecette(recettei, recettetab);
         }
-      });
+      }
     }
   }
   // Gestion des options des select
@@ -248,8 +268,8 @@ document.getElementById("selecting").addEventListener("change", gettaging);
 document.getElementById("selectust").addEventListener("change", gettagust);
 document.getElementById("selectapp").addEventListener("change", gettagapp);
 
-function miseEnFormeText(text) {
-  return text
+function miseEnFormeText(param) {
+  return param
     .toLowerCase()
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "");
