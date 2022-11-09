@@ -12,14 +12,13 @@
 </head>
 <body>
     <header>
-        <img class="logo"src="https://user.oc-static.com/upload/2020/08/14/15973932905401_logo%20%281%29.png">
+        <img class="logo" src="https://user.oc-static.com/upload/2020/08/14/15973932905401_logo%20%281%29.png" alt="Logo Les petits plats">
     </header>
     <main>
         <div class="recherche">
             
                 <div>
-                  <input id="myInput" type="text" name="search" placeholder="Rechercher une recette
-                  " value="">
+                  <input id="myInput" type="text" name="search" placeholder="Rechercher une recette">
                 </div>
                         <div class="tagplace">
 
@@ -39,11 +38,11 @@
                     <div class="ingbtn">
                         Ingredients
                     </div>
-                    <img class="arrowingopen" src="./data/image/icons8-chevron-left-48.png">
+                    <img class="arrowingopen" src="./data/image/icons8-chevron-left-48.png" alt="Open list ingredient">
                 </div>
                 <div class="inginputdiv">
                     <input type="text" id="filterInputIng" placeholder="Rechercher un ingredient">
-                    <img class="arrowingclose" src="./data/image/icons8-chevron-left-48.png">
+                    <img class="arrowingclose" src="./data/image/icons8-chevron-left-48.png" alt="Reduce list ingredient">
                 </div>
                 <ul id="selecting" class="filterselect bleu">
                 </ul>
@@ -53,11 +52,11 @@
                     <div class="appbtn">
                         Appareils
                     </div>
-                    <img class="arrowappopen" src="./data/image/icons8-chevron-left-48.png">
+                    <img class="arrowappopen" src="./data/image/icons8-chevron-left-48.png" alt="Open list appareils">
                 </div>
                 <div class="appinputdiv">
                     <input type="text" id="filterInputApp" placeholder="Rechercher un appareil">
-                    <img class="arrowappclose" src="./data/image/icons8-chevron-left-48.png">
+                    <img class="arrowappclose" src="./data/image/icons8-chevron-left-48.png" alt="Reduce list ingredient">
                 </div>
                 <ul id="selectapp" class="filterselect vert">
                 </ul>
@@ -67,13 +66,13 @@
                     <div class="ustbtn">
                         Ustensiles
                     </div>
-                    <img class="arrowustopen" src="./data/image/icons8-chevron-left-48.png">
+                    <img class="arrowustopen" src="./data/image/icons8-chevron-left-48.png" alt="Open list ustensiles">
                 </div>
                 <div class="ustinputdiv">
                     <input type="text" id="filterInputUst" placeholder="Rechercher un ustensile">
-                    <img class="arrowustclose" src="./data/image/icons8-chevron-left-48.png">
+                    <img class="arrowustclose" src="./data/image/icons8-chevron-left-48.png" alt="Reduce list ustensiles">
                 </div>
-                <ul id="selectust"class="filterselect orange">
+                <ul id="selectust" class="filterselect orange">
                 </ul>
             </div>
         </div>
@@ -83,14 +82,11 @@
             <div id="affichagerecette"></div>
         </div>
     </main>
-</body>
-
-<script src="./script/pages/index.js" type="module"></script>
+    <script src="./script/pages/index.js" type="module"></script>
 <script src="./script/factories/printrecette.js"></script>
 <script src="./script/utils/taging.js" type="module"></script>
 <script src="./script/utils/tagapp.js" type="module"></script>
 <script src="./script/utils/tagust.js" type="module"></script>
 <script src="./script/utils/inputfilter.js" type="module"></script>
-
-
+</body>
 </html>
