@@ -29,7 +29,7 @@ function recetteFactory(data) {
         namerecette.textContent = name;
         descrecette.textContent = description;
         const pictohorloge = document.createElement('img')
-        pictohorloge.setAttribute("src","../data/image/lhorloge.png")
+        pictohorloge.setAttribute("src","./data/image/lhorloge.png")
         pictohorloge.setAttribute("class","pictohorloge")
 
         timerecette.textContent = time +" min";
