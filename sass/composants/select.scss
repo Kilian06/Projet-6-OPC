@@ -31,6 +31,9 @@
     max-width: 600px;
     position: static;
     z-index: 10;
+    ::-webkit-scrollbar{
+        opacity: 0.5;
+    }
 }
 
 .inginputdiv{
@@ -82,6 +85,8 @@
     display: none;
     cursor: pointer;
     transform: rotate(180deg);
+    border-radius: 0px 0px 0px 5px;
+    
 }
 
 .ingredient ul{
@@ -121,6 +126,9 @@
     max-width: 600px;
     position: static;
     z-index: 10;
+    ::-webkit-scrollbar{
+        opacity: 0.5;
+    }
 }
 
 .appinputdiv{
@@ -172,6 +180,7 @@
     display: none;
     cursor: pointer;
     transform: rotate(180deg);
+    border-radius: 0px 0px 0px 5px;
 }
 
 .appareils ul{
@@ -210,6 +219,9 @@
     max-width: 600px;
     position: static;
     z-index: 10;
+    ::-webkit-scrollbar{
+        opacity: 0.5;
+    }
 }
 
 .ustinputdiv{
@@ -261,6 +273,7 @@
     display: none;
     cursor: pointer;
     transform: rotate(180deg);
+    border-radius: 0px 0px 0px 5px;
 }
 
 .ustensiles ul{
