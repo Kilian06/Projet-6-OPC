@@ -1,6 +1,6 @@
 
 function recetteFactory(data) {
-
+// Factory pour l'affichage des recettes
     const {name, description, time, id, appliance,ustensils} = data;
     const [ingredients] = [data.ingredients]
     function recetteCardDOM() {
@@ -62,6 +62,7 @@ function recetteFactory(data) {
 }
 
 function ingredientFactory(data) {
+    // factory pour l'affichage des ingredients
     const {ingredient, quantity, unit} = data;
 
     function ingredientCardDOM() {

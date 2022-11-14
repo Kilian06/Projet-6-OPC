@@ -40,7 +40,6 @@ async function displayrecette(recette) {
   ) {
     // Si longeur input >2 alors je cherche dedans sinon j'affiche tout
     if (document.getElementById("myInput").value.length > 2) {
-      console.log("Recherche Input uniquement");
 
       // Je cherche dans chaque recette
       for (var i = 0, n = recette.length; i < n; i++) {
@@ -50,6 +49,7 @@ async function displayrecette(recette) {
         var recetteing = recette[i].ingredients;
 
         window.inginput = 0;
+        // si il y a un ingredient qui match dans la recette alors je position la valeur inginput à 1
         for (var y = 0, m = recetteing.length; y < m; y++) {
           if (
             miseEnFormeText(recetteing[y].ingredient).includes(
@@ -60,7 +60,7 @@ async function displayrecette(recette) {
           }
         }
         // Recherche dans Name OU Description OU Ingredients.ingredient
-        // si ing = 1 alors l'input est présent dans un ingredient de recette
+        // si inginput = 1 alors l'input est présent dans un ingredient de recette
 
         if (
           miseEnFormeText(recettename).includes(miseEnFormeText(inputtext)) ||
@@ -71,7 +71,6 @@ async function displayrecette(recette) {
         }
       }
     } else {
-      console.log("Recherche sur aucun critere donc j'affiche tout");
       for (var i = 0, n = recette.length; i < n; i++) {
         var recettei = recette[i];
         printRecette(recettei, recettetab);
@@ -79,13 +78,11 @@ async function displayrecette(recette) {
     }
   }
   //// Fin Affichage pas d'input ni de tag
-  //// Debut Affichage un de si il y a un tag tag
+  //// Debut Affichage si il y a un tag tag
   else {
-    console.log("un tag a été selectionné");
     // Est ce qu'il y a du text dans l'input ?
     if (document.getElementById("myInput").value.length > 2) {
-      ///////////////////
-      // Je cherche dans chaque recette
+      // Est ce qu'en plus du tag il y a un input ? si oui alors je déroule
 
       for (var i = 0, n = recette.length; i < n; i++) {
         window.ingselect = 0;
@@ -104,13 +101,10 @@ async function displayrecette(recette) {
             )
           ) {
             window.inginput = 1;
-            console.log("on est la");
           }
         }
-        console.log("on est la");
 
         for (var z = 0, k = recetteing.length; z < k; z++) {
-          console.log("on est la");
 
           for (const element of selecting) {
             if (
@@ -119,7 +113,6 @@ async function displayrecette(recette) {
               )
             ) {
               window.ingselect = ingselect + 1;
-              console.log("on est la");
             }
           }
         }
@@ -129,9 +122,7 @@ async function displayrecette(recette) {
           }
         }
         for (const element of selectust) {
-          console.log(selectust);
-          console.log(element);
-          console.log(recetteust);
+
           if (recetteust.includes(element)) {
             window.ustselect = ustselect + 1;
           }
@@ -167,8 +158,7 @@ async function displayrecette(recette) {
                 miseEnFormeText(element)
               )
             ) {
-              console.log(recetteing[y].ingredient);
-              console.log(selecting);
+
               window.ingselect = ingselect + 1;
             }
           }
@@ -179,9 +169,7 @@ async function displayrecette(recette) {
           }
         }
         for (const element of selectust) {
-          console.log(selectust);
-          console.log(element);
-          console.log(recetteust);
+
           if (recetteust.includes(element)) {
             window.ustselect = ustselect + 1;
           }
@@ -198,13 +186,15 @@ async function displayrecette(recette) {
     }
   }
   // Gestion des options des select
+  // Envoie des recettes filtré pour mettre à jour la liste des select
   recuplistapparaeil(recettetab);
   recuplistusten(recettetab);
   recuplistingredient(recettetab);
+  // envoie des recettes filtré pour gestion du message sur le nombre de résultat
   printResultNumber(recettetab);
 
+  // Fonction pour créeer les tag lors d'un click sur les listes déroulantes. La création de tag engendre un nouvelle affichage de la fonction de recherche
   document.querySelectorAll(".listeappareil").forEach((item, index) => {
-    // here
     item.addEventListener("click", function (e) {
       createTagApp(e.target.innerText);
       gettagapp(e.target.innerText);
@@ -212,7 +202,6 @@ async function displayrecette(recette) {
   });
 
   document.querySelectorAll(".listeust").forEach((item, index) => {
-    // here
     item.addEventListener("click", function (e) {
       createTagUst(e.target.innerText);
       gettagust(e.target.innerText);
@@ -220,7 +209,6 @@ async function displayrecette(recette) {
   });
 
   document.querySelectorAll(".listeingredient").forEach((item, index) => {
-    // here
     item.addEventListener("click", function (e) {
       createTagIng(e.target.innerText);
       gettaging(e.target.innerText);
@@ -228,16 +216,20 @@ async function displayrecette(recette) {
   });
 }
 
+
 export async function initRecette() {
-  document.getElementById("affichagerecette").innerHTML = "";
-  const listeRecettebrut = await getrecette();
-  displayrecette(listeRecettebrut);
+  document.getElementById("affichagerecette").innerHTML = ""; // Reset affichage recette
+  const listeRecettebrut = await getrecette(); // Attente recup Json
+  displayrecette(listeRecettebrut); // Init affichage recette
 }
-initRecette();
+
+initRecette(); // Affichage recette au chargement de la page
 
 var inputing = document.getElementById("myInput");
-inputing.addEventListener("input", initRecette);
+inputing.addEventListener("input", initRecette); // A chaque input je relance le moteur
 
+
+// Etap de créations des tableaux pour l'ensemble des tag
 window.selecting = [];
 window.selectust = [];
 window.selectapp = [];
@@ -245,8 +237,8 @@ window.selectapp = [];
 function gettaging(e) {
   var inputselecting = e;
   var inputselectingvalue = inputselecting;
-  const pushinputselectingvalueing = selecting.push(inputselectingvalue);
-  initRecette();
+  const pushinputselectingvalueing = selecting.push(inputselectingvalue); // push la value dans le tableau
+  initRecette();  // relance du moteur de recherche
 }
 
 function gettagust(e) {
@@ -257,17 +249,19 @@ function gettagust(e) {
 }
 
 function gettagapp(e) {
-  console.log(e);
   var inputselectapp = e;
   var inputselectappvalue = inputselectapp;
   const pushinputselectingvalue = selectapp.push(inputselectappvalue);
   initRecette();
 }
 
+// Enregistrement de la selection dans les listes 
 document.getElementById("selecting").addEventListener("change", gettaging);
 document.getElementById("selectust").addEventListener("change", gettagust);
 document.getElementById("selectapp").addEventListener("change", gettagapp);
 
+
+// fonction de mise en forme Maj et Accent
 function miseEnFormeText(param) {
   return param
     .toLowerCase()
@@ -275,6 +269,7 @@ function miseEnFormeText(param) {
     .replace(/\p{Diacritic}/gu, "");
 }
 
+// Affichage via factory du résultat des recettes
 function printRecette(recette, recettetab) {
   const listerecettediv = document.getElementById("affichagerecette");
   var listerecette = recetteFactory(recette);
@@ -283,6 +278,7 @@ function printRecette(recette, recettetab) {
   recettetab.push(listerecette);
 }
 
+// Affichage du nombre de recette 
 async function printResultNumber(recettetab) {
   var zonenumberresult = document.getElementById("resultmsg");
   const listeRecettebrut = await getrecette();

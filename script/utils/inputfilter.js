@@ -1,22 +1,20 @@
 document.getElementById("filterInputApp").onkeyup =  function (e) {
     var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('filterInputApp');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("selectapp");
-    li = ul.getElementsByTagName('li');
+    input = document.getElementById('filterInputApp'); // Champ de saisie d'input pour les listes
+    filter = input.value.toUpperCase(); // mise en MAJ de la saisie
+    ul = document.getElementById("selectapp"); 
+    li = ul.getElementsByTagName('li'); // récup de la liste des éléments à filtrer
     for (i = 0; i < li.length; i++) {
-        console.log(li.length)
-        console.log(document.querySelectorAll(".listeappareil")[i])
+
       a = document.querySelectorAll(".listeappareil")[i];
-      txtValue = a.innerText;
-      console.log(txtValue)
-      let filters = filter.split(" ") 
+      txtValue = a.innerText; // Recup chaque champ des lites en text
+      let filters = filter.split(" ") // Séparer avec des espaces
       filters = filters.filter(f => f.length)   
       let shouldDisplay = true
       filters.forEach(filt => {
-        shouldDisplay = shouldDisplay && txtValue.toUpperCase().includes(filt)
+        shouldDisplay = shouldDisplay && txtValue.toUpperCase().includes(filt) // Match la saisie avec un element li
       })
-      li[i].style.display = (shouldDisplay || filters.length === 0) ? "" : "none";
+      li[i].style.display = (shouldDisplay || filters.length === 0) ? "" : "none"; // Display none si la fonction shouldDisplay
     }
   }
 
@@ -27,11 +25,9 @@ document.getElementById("filterInputUst").onkeyup =  function (e) {
   ul = document.getElementById("selectust");
   li = ul.getElementsByTagName('li');
   for (i = 0; i < li.length; i++) {
-      console.log(li.length)
-      console.log(document.querySelectorAll(".listeust")[i])
+
     a = document.querySelectorAll(".listeust")[i];
     txtValue = a.innerText;
-    console.log(txtValue)
     let filters = filter.split(" ") 
     filters = filters.filter(f => f.length)   
     let shouldDisplay = true
@@ -50,11 +46,9 @@ document.getElementById("filterInputIng").onkeyup =  function (e) {
     ul = document.getElementById("selecting");
     li = ul.getElementsByTagName('li');
     for (i = 0; i < li.length; i++) {
-        console.log(li.length)
-        console.log(document.querySelectorAll(".listeingredient")[i])
+
       a = document.querySelectorAll(".listeingredient")[i];
       txtValue = a.innerText;
-      console.log(txtValue)
       let filters = filter.split(" ") 
       filters = filters.filter(f => f.length)   
       let shouldDisplay = true
@@ -65,56 +59,86 @@ document.getElementById("filterInputIng").onkeyup =  function (e) {
     }
   }
 
+var filterInputIng = document.getElementById("filterInputIng")
+var arrowIngOpen =  document.querySelector(".arrowingopen")
+var arrowIngClose =  document.querySelector(".arrowingclose")
+var selecting = document.getElementById("selecting")
+var ingbtn = document.querySelector(".ingbtn")
+
+var filterInputApp = document.getElementById("filterInputApp")
+var arrowAppOpen =  document.querySelector(".arrowappopen")
+var arrowAppClose =  document.querySelector(".arrowappclose")
+var selectapp = document.getElementById("selectapp")
+var appbtn = document.querySelector(".appbtn")
+
+var filterInputUst = document.getElementById("filterInputUst")
+var arrowUstOpen =  document.querySelector(".arrowustopen")
+var arrowUstClose =  document.querySelector(".arrowustclose")
+var selectust = document.getElementById("selectust")
+var ustbtn = document.querySelector(".ustbtn")
+
+
+function flex(element){
+  element.style.display = "flex"
+}
+
+function none(element){
+  element.style.display = "none"
+}
+
+function block(element){
+  element.style.display = "block"
+}
 
 function opening(){
-  document.getElementById("filterInputIng").style.display = "flex"
-  document.getElementById("filterInputIng").focus()
-  document.querySelector(".arrowingopen").style.display = "none"
-  document.querySelector(".arrowingclose").style.display = "block"
-  document.getElementById("selecting").style.display = "flex"
-  document.querySelector(".ingbtn").style.display ="none"
+  flex(filterInputIng)
+  filterInputIng.focus()
+  none(arrowIngOpen)
+  block(arrowIngClose)
+  flex(selecting)
+  none(ingbtn)
 }
 
 function closeing(){
-  document.getElementById("filterInputIng").style.display = "none"
-  document.querySelector(".arrowingopen").style.display = "block"
-  document.querySelector(".arrowingclose").style.display = "none"
-  document.getElementById("selecting").style.display = "none"
-  document.querySelector(".ingbtn").style.display ="block"
+  none(filterInputIng)
+  block(arrowIngOpen)
+  none(arrowIngClose)
+  none(selecting)
+  block(ingbtn)
 }
 
 function openapp(){
-  document.getElementById("filterInputApp").style.display = "flex"
-  document.getElementById("filterInputApp").focus()
-  document.querySelector(".arrowappopen").style.display = "none"
-  document.querySelector(".arrowappclose").style.display = "block"
-  document.getElementById("selectapp").style.display = "flex"
-  document.querySelector(".appbtn").style.display ="none"
+  flex(filterInputApp)
+  filterInputApp.focus()
+  none(arrowAppOpen)
+  block(arrowAppClose)
+  flex(selectapp)
+  none(appbtn)
 }
 
 function closeapp(){
-  document.getElementById("filterInputApp").style.display = "none"
-  document.querySelector(".arrowappopen").style.display = "block"
-  document.querySelector(".arrowappclose").style.display = "none"
-  document.getElementById("selectapp").style.display = "none"
-  document.querySelector(".appbtn").style.display ="block"
+  none(filterInputApp)
+  block(arrowAppOpen)
+  none(arrowAppClose)
+  none(selectapp)
+  block(appbtn)
 }
 
 function openust(){
-  document.getElementById("filterInputUst").style.display = "flex"
-  document.getElementById("filterInputUst").focus()
-  document.querySelector(".arrowustopen").style.display = "none"
-  document.querySelector(".arrowustclose").style.display = "block"
-  document.getElementById("selectust").style.display = "flex"
-  document.querySelector(".ustbtn").style.display ="none"
+  flex(filterInputUst)
+  filterInputUst.focus()
+  none(arrowUstOpen)
+  block(arrowUstClose)
+  flex(selectust)
+  none(ustbtn)
 }
 
 function closeust(){
-  document.getElementById("filterInputUst").style.display = "none"
-  document.querySelector(".arrowustopen").style.display = "block"
-  document.querySelector(".arrowustclose").style.display = "none"
-  document.getElementById("selectust").style.display = "none"
-  document.querySelector(".ustbtn").style.display ="block"
+  none(filterInputUst)
+  block(arrowUstOpen)
+  none(arrowUstClose)
+  none(selectust)
+  block(ustbtn)
 }
 
 // Open liste Ingredient
