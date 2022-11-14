@@ -106,7 +106,7 @@ async function displayrecette(recette) {
         for (var z = 0, k = recetteing.length; z < k; z++) {
           for (const element of selecting) {
             if (
-              miseEnFormeText(recetteing[z].ingredient).includes(
+              miseEnFormeText(recetteing[z].ingredient) == (
                 miseEnFormeText(element)
               )
             ) {
@@ -151,7 +151,7 @@ async function displayrecette(recette) {
         for (var y = 0, m = recetteing.length; y < m; y++) {
           for (const element of selecting) {
             if (
-              miseEnFormeText(recetteing[y].ingredient).includes(
+              miseEnFormeText(recetteing[y].ingredient) == (
                 miseEnFormeText(element)
               )
             ) {

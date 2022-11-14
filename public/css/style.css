@@ -410,7 +410,7 @@
   position: relative;
   top: 5px;
   margin-left: 15px;
-  background: url(/data/image/icons8-close.svg) center center/20px no-repeat;
+  background: url(data/image/icons8-close.svg) center center/20px no-repeat;
 }
 
 * {
@@ -478,7 +478,7 @@ main {
   height: 20px;
   top: 5px;
   margin-left: 15px;
-  background: url(/data/image/icons8-close.svg) center center/50px no-repeat;
+  background: url(data/image/icons8-close.svg) center center/50px no-repeat;
 }
 
 /*# sourceMappingURL=style.css.map */
