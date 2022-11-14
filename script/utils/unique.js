@@ -2,7 +2,7 @@ export function recuplistapparaeil(recettetab) {
   const listappareil = recettetab;
   document.querySelectorAll(".listeappareil").forEach((e) => e.remove()); // Reste de la liste
   const listappareils = [
-    ...new Set(listappareil.map((item) => item.appliance)), 
+    ...new Set(listappareil.map((item) => item.appliance)),
   ];
   let appareilunique = new Map(listappareils.map((s) => [s.toLowerCase(), s]));
   const appareiluniquevalue = [...appareilunique.values()];
@@ -19,8 +19,6 @@ export function recuplistapparaeil(recettetab) {
     selectapp.insertBefore(option, selectapp.lastChild);
   }
 }
-
-
 
 export function recuplistusten(recettetab) {
   const listelement = recettetab;
@@ -50,11 +48,9 @@ export function recuplistusten(recettetab) {
 
 export function recuplistingredient(recettetab) {
   const listelement = recettetab;
-  document
-    .querySelectorAll(".listeingredient")
-    .forEach((e) => e.remove());
+  document.querySelectorAll(".listeingredient").forEach((e) => e.remove());
   const listeIngredients = [
-    ...new Set(listelement.map((item) => item.ingredients)),  // Récup ingredient de chaque recette
+    ...new Set(listelement.map((item) => item.ingredients)), // Récup ingredient de chaque recette
   ];
   const listeIngredientsflat = listeIngredients.flat(Infinity); // Mise à plat pour enlever la notion de recette
   const ingredientUnique = [

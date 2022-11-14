@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="public/css/style.css" rel="stylesheet" type="text/css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="public/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap"
+      rel="stylesheet" />
     <title>Les petits plats</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img class="logo" src="https://user.oc-static.com/upload/2020/08/14/15973932905401_logo%20%281%29.png" alt="Logo Les petits plats">
+      <img
+        class="logo"
+        src="https://user.oc-static.com/upload/2020/08/14/15973932905401_logo%20%281%29.png"
+        alt="Logo Les petits plats" />
     </header>
     <main>
-        <div class="recherche">
-            
-                <div>
-                  <input id="myInput" type="text" name="search" placeholder="Rechercher une recette">
-                </div>
-                        <div class="tagplace">
-
-                </div>
-
+      <div class="recherche">
+        <div>
+          <input
+            id="myInput"
+            type="text"
+            name="search"
+            placeholder="Rechercher une recette" />
         </div>
-        <div class="keyword">
-            <div class="tag-container-ing"></div>
-            <div class="tag-container-app"></div>
-            <div class="tag-container-ust"></div>
-
-
+        <div class="tagplace"></div>
+      </div>
+      <div class="keyword">
+        <div class="tag-container-ing"></div>
+        <div class="tag-container-app"></div>
+        <div class="tag-container-ust"></div>
+      </div>
+      <div class="filter">
+        <div class="ingredient">
+          <div class="ingopen">
+            <div class="ingbtn">Ingredients</div>
+            <img
+              class="arrowingopen"
+              src="./data/image/icons8-chevron-left-48.png"
+              alt="Open list ingredient" />
+          </div>
+          <div class="inginputdiv">
+            <input
+              type="text"
+              id="filterInputIng"
+              placeholder="Rechercher un ingredient" />
+            <img
+              class="arrowingclose"
+              src="./data/image/icons8-chevron-left-48.png"
+              alt="Reduce list ingredient" />
+          </div>
+          <ul id="selecting" class="filterselect bleu"></ul>
         </div>
-        <div class="filter">
-            <div class="ingredient">
-                <div class="ingopen">
-                    <div class="ingbtn">
-                        Ingredients
-                    </div>
-                    <img class="arrowingopen" src="./data/image/icons8-chevron-left-48.png" alt="Open list ingredient">
-                </div>
-                <div class="inginputdiv">
-                    <input type="text" id="filterInputIng" placeholder="Rechercher un ingredient">
-                    <img class="arrowingclose" src="./data/image/icons8-chevron-left-48.png" alt="Reduce list ingredient">
-                </div>
-                <ul id="selecting" class="filterselect bleu">
-                </ul>
-            </div>
-            <div class="appareils">
-                <div class="appopen">
-                    <div class="appbtn">
-                        Appareils
-                    </div>
-                    <img class="arrowappopen" src="./data/image/icons8-chevron-left-48.png" alt="Open list appareils">
-                </div>
-                <div class="appinputdiv">
-                    <input type="text" id="filterInputApp" placeholder="Rechercher un appareil">
-                    <img class="arrowappclose" src="./data/image/icons8-chevron-left-48.png" alt="Reduce list ingredient">
-                </div>
-                <ul id="selectapp" class="filterselect vert">
-                </ul>
-            </div>
-            <div class="ustensiles">
-                <div class="ustopen">
-                    <div class="ustbtn">
-                        Ustensiles
-                    </div>
-                    <img class="arrowustopen" src="./data/image/icons8-chevron-left-48.png" alt="Open list ustensiles">
-                </div>
-                <div class="ustinputdiv">
-                    <input type="text" id="filterInputUst" placeholder="Rechercher un ustensile">
-                    <img class="arrowustclose" src="./data/image/icons8-chevron-left-48.png" alt="Reduce list ustensiles">
-                </div>
-                <ul id="selectust" class="filterselect orange">
-                </ul>
-            </div>
+        <div class="appareils">
+          <div class="appopen">
+            <div class="appbtn">Appareils</div>
+            <img
+              class="arrowappopen"
+              src="./data/image/icons8-chevron-left-48.png"
+              alt="Open list appareils" />
+          </div>
+          <div class="appinputdiv">
+            <input
+              type="text"
+              id="filterInputApp"
+              placeholder="Rechercher un appareil" />
+            <img
+              class="arrowappclose"
+              src="./data/image/icons8-chevron-left-48.png"
+              alt="Reduce list ingredient" />
+          </div>
+          <ul id="selectapp" class="filterselect vert"></ul>
         </div>
-        <div class="result-message" id="resultmsg">
+        <div class="ustensiles">
+          <div class="ustopen">
+            <div class="ustbtn">Ustensiles</div>
+            <img
+              class="arrowustopen"
+              src="./data/image/icons8-chevron-left-48.png"
+              alt="Open list ustensiles" />
+          </div>
+          <div class="ustinputdiv">
+            <input
+              type="text"
+              id="filterInputUst"
+              placeholder="Rechercher un ustensile" />
+            <img
+              class="arrowustclose"
+              src="./data/image/icons8-chevron-left-48.png"
+              alt="Reduce list ustensiles" />
+          </div>
+          <ul id="selectust" class="filterselect orange"></ul>
         </div>
-        <div class="result">
-            <div id="affichagerecette"></div>
-        </div>
+      </div>
+      <div class="result-message" id="resultmsg"></div>
+      <div class="result">
+        <div id="affichagerecette"></div>
+      </div>
     </main>
     <script src="./script/pages/index.js" type="module"></script>
-<script src="./script/factories/printrecette.js"></script>
-<script src="./script/utils/taging.js" type="module"></script>
-<script src="./script/utils/tagapp.js" type="module"></script>
-<script src="./script/utils/tagust.js" type="module"></script>
-<script src="./script/utils/inputfilter.js" type="module"></script>
-</body>
+    <script src="./script/factories/printrecette.js"></script>
+    <script src="./script/utils/taging.js" type="module"></script>
+    <script src="./script/utils/tagapp.js" type="module"></script>
+    <script src="./script/utils/tagust.js" type="module"></script>
+    <script src="./script/utils/inputfilter.js" type="module"></script>
+  </body>
 </html>

@@ -40,7 +40,6 @@ async function displayrecette(recette) {
   ) {
     // Si longeur input >2 alors je cherche dedans sinon j'affiche tout
     if (document.getElementById("myInput").value.length > 2) {
-
       // Je cherche dans chaque recette
       for (var i = 0, n = recette.length; i < n; i++) {
         var recettei = recette[i];
@@ -105,7 +104,6 @@ async function displayrecette(recette) {
         }
 
         for (var z = 0, k = recetteing.length; z < k; z++) {
-
           for (const element of selecting) {
             if (
               miseEnFormeText(recetteing[z].ingredient).includes(
@@ -122,7 +120,6 @@ async function displayrecette(recette) {
           }
         }
         for (const element of selectust) {
-
           if (recetteust.includes(element)) {
             window.ustselect = ustselect + 1;
           }
@@ -158,7 +155,6 @@ async function displayrecette(recette) {
                 miseEnFormeText(element)
               )
             ) {
-
               window.ingselect = ingselect + 1;
             }
           }
@@ -169,7 +165,6 @@ async function displayrecette(recette) {
           }
         }
         for (const element of selectust) {
-
           if (recetteust.includes(element)) {
             window.ustselect = ustselect + 1;
           }
@@ -216,7 +211,6 @@ async function displayrecette(recette) {
   });
 }
 
-
 export async function initRecette() {
   document.getElementById("affichagerecette").innerHTML = ""; // Reset affichage recette
   const listeRecettebrut = await getrecette(); // Attente recup Json
@@ -228,7 +222,6 @@ initRecette(); // Affichage recette au chargement de la page
 var inputing = document.getElementById("myInput");
 inputing.addEventListener("input", initRecette); // A chaque input je relance le moteur
 
-
 // Etap de créations des tableaux pour l'ensemble des tag
 window.selecting = [];
 window.selectust = [];
@@ -238,7 +231,7 @@ function gettaging(e) {
   var inputselecting = e;
   var inputselectingvalue = inputselecting;
   const pushinputselectingvalueing = selecting.push(inputselectingvalue); // push la value dans le tableau
-  initRecette();  // relance du moteur de recherche
+  initRecette(); // relance du moteur de recherche
 }
 
 function gettagust(e) {
@@ -255,11 +248,10 @@ function gettagapp(e) {
   initRecette();
 }
 
-// Enregistrement de la selection dans les listes 
+// Enregistrement de la selection dans les listes
 document.getElementById("selecting").addEventListener("change", gettaging);
 document.getElementById("selectust").addEventListener("change", gettagust);
 document.getElementById("selectapp").addEventListener("change", gettagapp);
-
 
 // fonction de mise en forme Maj et Accent
 function miseEnFormeText(param) {
@@ -278,7 +270,7 @@ function printRecette(recette, recettetab) {
   recettetab.push(listerecette);
 }
 
-// Affichage du nombre de recette 
+// Affichage du nombre de recette
 async function printResultNumber(recettetab) {
   var zonenumberresult = document.getElementById("resultmsg");
   const listeRecettebrut = await getrecette();
