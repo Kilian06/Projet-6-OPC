@@ -3,9 +3,12 @@ import {
   recuplistusten,
   recuplistingredient,
 } from "../utils/unique.js";
+import { recetteTemplate} from "../utils/printrecette.js"
+import { printResultNumber} from "../utils/msgresult.js"
 import { createTagApp } from "../utils/tagapp.js";
 import { createTagUst } from "../utils/tagust.js";
 import { createTagIng } from "../utils/taging.js";
+import {miseEnFormeText} from "../utils/miseEnForme.js"
 
 export async function getrecette() {
   return fetch(`./data/recipes.json`)
@@ -14,10 +17,12 @@ export async function getrecette() {
       return listerecettesJson;
     });
 }
-getrecette();
 
-let recettetab = [];
-let myingredient;
+
+
+window.selecting = [];
+window.selectust = [];
+window.selectapp = [];
 
 async function displayrecette(recette) {
   // RAZ de l'affichage des recettes
@@ -218,33 +223,29 @@ export async function initRecette() {
 }
 
 initRecette(); // Affichage recette au chargement de la page
-
-var inputing = document.getElementById("myInput");
-inputing.addEventListener("input", initRecette); // A chaque input je relance le moteur
+document.getElementById("myInput").addEventListener("input", initRecette); // A chaque input je relance le moteur
 
 // Etap de créations des tableaux pour l'ensemble des tag
-window.selecting = [];
-window.selectust = [];
-window.selectapp = [];
+
 
 function gettaging(e) {
   var inputselecting = e;
   var inputselectingvalue = inputselecting;
-  const pushinputselectingvalueing = selecting.push(inputselectingvalue); // push la value dans le tableau
+  selecting.push(inputselectingvalue); // push la value dans le tableau
   initRecette(); // relance du moteur de recherche
 }
 
 function gettagust(e) {
   var inputselectust = e;
   var inputselectustvalue = inputselectust;
-  const pushinputselectingvalueust = selectust.push(inputselectustvalue);
+  selectust.push(inputselectustvalue);
   initRecette();
 }
 
 function gettagapp(e) {
   var inputselectapp = e;
   var inputselectappvalue = inputselectapp;
-  const pushinputselectingvalue = selectapp.push(inputselectappvalue);
+  selectapp.push(inputselectappvalue);
   initRecette();
 }
 
@@ -253,67 +254,14 @@ document.getElementById("selecting").addEventListener("change", gettaging);
 document.getElementById("selectust").addEventListener("change", gettagust);
 document.getElementById("selectapp").addEventListener("change", gettagapp);
 
-// fonction de mise en forme Maj et Accent
-function miseEnFormeText(param) {
-  return param
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "");
-}
 
-// Affichage via factory du résultat des recettes
+
+// Affichage via template du résultat des recettes
 function printRecette(recette, recettetab) {
   const listerecettediv = document.getElementById("affichagerecette");
-  var listerecette = recetteFactory(recette);
+  var listerecette = recetteTemplate(recette);
   const recetteCardDOM = listerecette.recetteCardDOM();
   listerecettediv.appendChild(recetteCardDOM);
   recettetab.push(listerecette);
 }
 
-// Affichage du nombre de recette
-async function printResultNumber(recettetab) {
-  var zonenumberresult = document.getElementById("resultmsg");
-  const listeRecettebrut = await getrecette();
-
-  if (document.querySelector(".zone-nombre") != null) {
-    document.querySelector(".zone-nombre").remove();
-  }
-  if (recettetab.length == listeRecettebrut.length) {
-    zonenumberresult.setAttribute("class", "result-message init");
-    var nombreRecette = document.createElement("div");
-    nombreRecette.setAttribute("class", "zone-nombre");
-    var closeNumber = document.createElement("img");
-    closeNumber.setAttribute("class", "close-resutl");
-    closeNumber.setAttribute("id", "close-resutl");
-    zonenumberresult.appendChild(nombreRecette);
-    zonenumberresult.appendChild(closeNumber);
-    nombreRecette.textContent =
-      " Pour commencer a effectuer une recherche merci de saisir des éléments dans la barre de recherche ou de selectionner des tags";
-  }
-
-  if (recettetab.length > 1 && recettetab.length < listeRecettebrut.length) {
-    zonenumberresult.setAttribute("class", "result-message reponse");
-    var nombreRecette = document.createElement("div");
-    nombreRecette.setAttribute("class", "zone-nombre");
-    zonenumberresult.appendChild(nombreRecette);
-    nombreRecette.textContent =
-      recettetab.length + " recettes correspond à votre recherche";
-  }
-
-  if (recettetab.length == 1) {
-    zonenumberresult.setAttribute("class", "result-message reponse");
-    var nombreRecette = document.createElement("div");
-    nombreRecette.setAttribute("class", "zone-nombre");
-    zonenumberresult.appendChild(nombreRecette);
-    nombreRecette.textContent =
-      recettetab.length + " recette correspond à votre recherche";
-  }
-
-  if (recettetab.length == 0) {
-    zonenumberresult.setAttribute("class", "result-message erreur");
-    var nombreRecette = document.createElement("div");
-    nombreRecette.setAttribute("class", "zone-nombre");
-    zonenumberresult.appendChild(nombreRecette);
-    nombreRecette.textContent = " Aucune recette correspond à votre recherche";
-  }
-}

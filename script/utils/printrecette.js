@@ -1,6 +1,6 @@
 
-function recetteFactory(data) {
-// Factory pour l'affichage des recettes
+export function recetteTemplate(data) {
+// Templacte pour l'affichage des recettes
     const {name, description, time, id, appliance,ustensils} = data;
     const [ingredients] = [data.ingredients]
     function recetteCardDOM() {
@@ -61,7 +61,7 @@ function recetteFactory(data) {
     return {name, description,time,ingredients,appliance,ustensils, recetteCardDOM }
 }
 
-function ingredientFactory(data) {
+function ingredientTemplate(data) {
     // factory pour l'affichage des ingredients
     const {ingredient, quantity, unit} = data;
 
